@@ -1,0 +1,17 @@
+.buttonWrapper {
+  margin-top: 10px;
+}
+
+.inviteWrapper {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c4c5c5;
+  text-align: center;
+}
+
+.inviteWrapper a {
+  color: #0077ff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 5px;
+}

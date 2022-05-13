@@ -1,0 +1,16 @@
+.navbar {
+  padding: 35px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 22px;
+}
