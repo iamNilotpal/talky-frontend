@@ -15,12 +15,12 @@ const Email = ({ onNextClick }) => {
     >
       <TextInput
         type="email"
-        placeholder="Your email address"
+        placeholder="Enter email address"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <Button
-        text="Next"
+        text="Request OTP"
         icon="arrow"
         iconAlt="Arrow icon"
         onClick={onNextClick}

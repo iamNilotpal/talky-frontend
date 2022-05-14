@@ -16,7 +16,7 @@ const StepOtp = ({ onNextClick }) => {
           value={otp}
           onChange={(e) => setOtp(e.target.value)}
         />
-        <Button text="Next" icon="arrow" iconAlt="Arrow icon" />
+        <Button text="Verify OTP" icon="arrow" iconAlt="Arrow icon" />
         <p className={styles.paragraph}>
           By entering your number, you’re agreeing to our Terms of Service and
           Privacy Policy. Thanks!

@@ -11,19 +11,19 @@ const Phone = ({ onNextClick }) => {
     <Card heading={'Enter Your Phone Number'} icon="phone" iconAlt="Phone icon">
       <TextInput
         type="tel"
-        placeholder="Your phone number"
+        placeholder="Enter phone number"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
       <Button
-        text="Next"
+        text="Request OTP"
         icon="arrow"
         iconAlt="Arrow icon"
         onClick={onNextClick}
       />
       <p className={styles.paragraph}>
-        By entering your number, you’re agreeing to our Terms of Service and
-        Privacy Policy. Thanks!
+        By entering your phone number, you’re agreeing to our Terms of Service
+        and Privacy Policy. Thanks!
       </p>
     </Card>
   );
