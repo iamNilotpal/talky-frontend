@@ -1,0 +1,40 @@
+.cardWrapper {
+  composes: cardWrapper from '../../App.module.css';
+}
+
+.buttonWrap {
+  align-self: flex-end;
+  display: flex;
+  gap: 8px;
+}
+
+.tapButton {
+  width: 45px;
+  height: 45px;
+  background: #262626;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tapButton img {
+  width: 30px;
+  height: 30px;
+}
+
+.active {
+  background: #0077ff;
+}
+
+.paragraph {
+  max-width: 330px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  line-height: 170%;
+  color: #c4c5c5;
+  margin-top: -8px;
+}

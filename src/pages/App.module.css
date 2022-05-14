@@ -1,0 +1,12 @@
+.cardWrapper {
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 85px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
