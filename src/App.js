@@ -5,27 +5,32 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import GuestRoute from './components/Routes/GuestRoute';
+import SemiProtectedRoute from './components/Routes/SemiProtectedRoute';
+import ProtectedRoute from './components/Routes/ProtectedRoute';
 import Navigation from './components/shared/Navigation/Navigation';
+import Activate from './pages/Activate/Activate';
+import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Rooms from './pages/Rooms/Rooms';
 
 const App = () => {
   return (
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/" exact>
+        <GuestRoute path="/" exact>
           <Home />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-
-        {/* 404 Route */}
+        </GuestRoute>
+        <GuestRoute path="/authenticate">
+          <Authenticate />
+        </GuestRoute>
+        <SemiProtectedRoute path="/activate">
+          <Activate />
+        </SemiProtectedRoute>
+        <ProtectedRoute path="/rooms">
+          <Rooms />
+        </ProtectedRoute>
         <Route path="*">
           <Redirect to="/" />
         </Route>
