@@ -1,5 +1,15 @@
+.cardWrapper {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
 .buttonWrapper {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .inviteWrapper {
@@ -14,4 +24,14 @@
   font-size: 15px;
   font-weight: 600;
   margin-left: 5px;
+}
+
+.paragraph {
+  max-width: 355px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 14px;
+  line-height: 170%;
+  color: #c4c5c5;
 }

@@ -8,29 +8,31 @@ import { Redirect } from 'react-router-dom';
 const Home = () => {
   const [toRegister, setToRegister] = useState(false);
 
-  if (toRegister) return <Redirect to="/register" />;
+  if (toRegister) return <Redirect to="/authenticate" />;
 
   return (
-    <Card heading={'Welcome To Talky!'} icon="logo192" iconAlt="Logo">
-      <p>
-        We’re working hard to get Talky ready for everyone! While we wrap up the
-        finishing youches, we’re adding people gradually to make sure nothing
-        breaks :)
-      </p>
+    <section className={styles.cardWrapper}>
+      <Card heading={'Welcome To Talky!'} icon="logo192" iconAlt="Logo">
+        <p className={styles.paragraph}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          dolores ad odit ipsum! Et, accusantium non quis aliquid, cumque
+          voluptate voluptatum! :)
+        </p>
 
-      <div className={styles.buttonWrapper}>
-        <Button
-          text="Get Your Username"
-          icon="arrow"
-          iconAlt="Arrow icon"
-          onClick={() => setToRegister(true)}
-        />
-        <div className={styles.inviteWrapper}>
-          <span>Have an invite text?</span>
-          <Link to="/login">Sign In</Link>
+        <div className={styles.buttonWrapper}>
+          <Button
+            text="Let's Get Started"
+            icon="arrow"
+            iconAlt="Arrow icon"
+            onClick={() => setToRegister(true)}
+          />
+          <div className={styles.inviteWrapper}>
+            <span>Have an invite text?</span>
+            <Link to="/authenticate">Sign In</Link>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </section>
   );
 };
 

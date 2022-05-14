@@ -17,11 +17,7 @@ const Register = () => {
   const [step, setStep] = useState(1);
   const Component = steps[step];
 
-  return (
-    <div>
-      <Component onNextClick={() => setStep((step) => step + 1)} />
-    </div>
-  );
+  return <Component onNextClick={() => setStep((step) => step + 1)} />;
 };
 
 export default Register;

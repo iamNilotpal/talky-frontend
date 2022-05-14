@@ -7,7 +7,7 @@ const Navigation = () => {
     <nav className={`conatiner ${styles.navbar}`}>
       <Link to="/" className={styles.logo}>
         <img
-          src="/logo192.png"
+          src="/images/logo192.svg"
           alt="Site logo"
           style={{ height: '25px', marginRight: '8px' }}
         />
