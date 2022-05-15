@@ -14,7 +14,9 @@ const StepOtp = ({ onNextClick }) => {
           type="tel"
           placeholder="Enter the code we just texted you"
           value={otp}
-          onChange={(e) => setOtp(e.target.value)}
+          onChange={(e) =>
+            setOtp((otp) => (e.target.value.length < 5 ? e.target.value : otp))
+          }
         />
         <Button text="Verify OTP" icon="arrow" iconAlt="Arrow icon" />
         <p className={styles.paragraph}>
