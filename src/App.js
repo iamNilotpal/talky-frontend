@@ -13,6 +13,7 @@ import Activate from './pages/Activate/Activate';
 import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
 import Rooms from './pages/Rooms/Rooms';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Redirect to="/" />
         </Route>
       </Switch>
+      <Toaster />
     </Router>
   );
 };
