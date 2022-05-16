@@ -15,22 +15,25 @@ const StepOtp = () => {
 
   useEffect(() => successToast('OTP sent to your phone number.'), []);
 
-  const handleOtpVerification = async () => {
-    try {
-      if (!otp) return errorToast('Enter 4-digit code sent your phone');
-      const { data } = await verifyOtp(phone, otp, hash);
-      console.log(data);
-      if (data.authed && data.ok) dispatch(setAuth(data.user));
-    } catch (error) {
-      errorToast(error.response.data.statusText);
-    }
+  const handleOtpVerification = () => {
+    if (!otp) return errorToast('Enter 4-digit code sent your phone');
+    verifyOtp(phone, otp, hash)
+      .then(({ data }) => {
+        if (data.authed && data.ok) dispatch(setAuth(data.user));
+        console.log(data);
+      })
+      .catch(({ response }) => errorToast(response.data.message));
   };
 
   const handleOtpSend = async () => {
-    const { data } = await sendOtp(phone);
-    successToast('OTP sent to your number.');
-    console.log(data);
-    dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
+    if (!phone) return errorToast('Enter your mobile number.');
+    sendOtp(phone)
+      .then(({ data }) => {
+        successToast('OTP sent to your number.');
+        console.log(data);
+        dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
+      })
+      .catch(({ response }) => errorToast(response.data.message));
   };
 
   return (
