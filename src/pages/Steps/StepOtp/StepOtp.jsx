@@ -20,7 +20,6 @@ const StepOtp = () => {
     verifyOtp(phone, otp, hash)
       .then(({ data }) => {
         if (data.authed && data.ok) dispatch(setAuth(data.user));
-        console.log(data);
       })
       .catch(({ response }) => errorToast(response.data.message));
   };
@@ -29,7 +28,7 @@ const StepOtp = () => {
     if (!phone) return errorToast('Enter your mobile number.');
     sendOtp(phone)
       .then(({ data }) => {
-        successToast('OTP sent to your number.');
+        successToast('OTP sent to your phone.');
         console.log(data);
         dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
       })

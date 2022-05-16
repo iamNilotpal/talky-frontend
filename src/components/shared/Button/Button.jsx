@@ -11,7 +11,11 @@ const Button = ({
   return (
     <button type={type} id={styles.button} onClick={onClick}>
       <span>{text}</span>
-      <img src={`/images/${icon}.svg`} alt={iconAlt} />
+      <img
+        src={`/images/${icon}.svg`}
+        alt={iconAlt}
+        width={icon === 'shock' ? '22px' : 'auto'}
+      />
     </button>
   );
 };
