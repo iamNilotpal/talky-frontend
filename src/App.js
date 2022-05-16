@@ -14,8 +14,14 @@ import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
 import Rooms from './pages/Rooms/Rooms';
 import { Toaster } from 'react-hot-toast';
+import { useRefreshToken } from './hooks/useRefreshToken';
+import Loader from './components/Loader/Screen/Screen';
 
 const App = () => {
+  const loading = useRefreshToken();
+
+  if (loading) return <Loader />;
+
   return (
     <Router>
       <Navigation />
