@@ -1,0 +1,28 @@
+.loader {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader span {
+  font-size: 45px;
+  font-weight: 600;
+  animation: blur 3s linear infinite;
+  line-height: 20px;
+  transition: all 0.5s;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@keyframes blur {
+  0%,
+  90% {
+    filter: blur(0);
+  }
+
+  50% {
+    filter: blur(10px);
+  }
+}

@@ -1,0 +1,63 @@
+.spinner {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.spinner .dot {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.spinner .dot::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgb(12, 180, 231);
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.spinner .dot {
+  -webkit-animation: spin 2s infinite;
+  animation: spin 2s infinite;
+}
+
+.spinner .dot:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+}
+
+.spinner .dot:nth-child(3) {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+
+.spinner .dot:nth-child(4) {
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
+}
+
+.spinner .dot:nth-child(5) {
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
