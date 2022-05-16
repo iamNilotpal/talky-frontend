@@ -6,3 +6,17 @@
 .paragraph {
   composes: paragraph from '../StepPhoneEmail/StepPhoneEmail.module.css';
 }
+
+.otpWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: -5px;
+}
+
+.otpWrapper #resend {
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
