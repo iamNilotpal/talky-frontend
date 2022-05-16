@@ -6,3 +6,11 @@
   composes: cardWrapper from '../../App.module.css';
   margin-top: 100px;
 }
+
+.warning {
+  font-size: 12px;
+  font-weight: 500;
+  color: #c4c5c5;
+  margin-top: -22px;
+  margin-bottom: 10px;
+}

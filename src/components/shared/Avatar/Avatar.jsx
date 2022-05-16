@@ -13,6 +13,7 @@ const Avatar = ({ image, onChange }) => {
           id="avatarInput"
           aria-label="Avatar input"
           onChange={onChange}
+          accept="image/png, image/jpeg"
         />
         <label htmlFor="avatarInput" aria-label="Avatar input">
           Choose a different image
