@@ -22,8 +22,6 @@ const Home = () => {
         <div className={styles.buttonWrapper}>
           <Button
             text="Let's Get Started"
-            icon="arrow"
-            iconAlt="Arrow icon"
             onClick={() => setToRegister(true)}
           />
           <div className={styles.inviteWrapper}>

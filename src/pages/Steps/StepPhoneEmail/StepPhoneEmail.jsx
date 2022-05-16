@@ -21,7 +21,7 @@ const StepPhoneEmail = ({ onNextClick }) => {
           }`}
           onClick={() => setType('phone')}
         >
-          <img src="/images/phone-andriod.svg" alt="Phone icon" />
+          <img src="/images/phone.svg" alt="Phone icon" />
         </button>
         <button
           className={`${styles.tapButton} ${

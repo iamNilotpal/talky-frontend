@@ -170,3 +170,7 @@ table {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.margin_top--big {
+  margin-top: 110px;
+}

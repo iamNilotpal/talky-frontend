@@ -10,8 +10,8 @@ const Email = ({ onNextClick }) => {
   return (
     <Card
       heading={'Enter Your Email Address'}
-      icon="email"
-      iconAlt="Email icon"
+      icon="shock"
+      iconAlt="Shock emoji icon"
     >
       <TextInput
         type="email"
@@ -19,12 +19,7 @@ const Email = ({ onNextClick }) => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Button
-        text="Request OTP"
-        icon="arrow"
-        iconAlt="Arrow icon"
-        onClick={onNextClick}
-      />
+      <Button text="Request OTP" onClick={onNextClick} />
       <p className={styles.paragraph}>
         By entering your email, you’re agreeing to our Terms of Service and
         Privacy Policy. Thanks!

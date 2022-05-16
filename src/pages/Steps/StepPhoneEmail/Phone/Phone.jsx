@@ -21,19 +21,18 @@ const Phone = ({ onNextClick }) => {
   };
 
   return (
-    <Card heading={'Enter Your Phone Number'} icon="phone" iconAlt="Phone icon">
+    <Card
+      heading={'Enter Your Phone Number'}
+      icon="shock"
+      iconAlt="Shock emoji icon"
+    >
       <TextInput
         type="tel"
         placeholder="Enter phone number"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
-      <Button
-        text="Request OTP"
-        icon="arrow"
-        iconAlt="Arrow icon"
-        onClick={handleOtpSend}
-      />
+      <Button text="Request OTP" onClick={handleOtpSend} />
       <p className={styles.paragraph}>
         By entering your phone number, you’re agreeing to our Terms of Service
         and Privacy Policy. Thanks!
