@@ -1,0 +1,8 @@
+.cardWrapper {
+  composes: cardWrapper from '../../App.module.css';
+  margin-top: 100px;
+}
+
+.paragraph {
+  composes: paragraph from '../StepPhoneEmail/StepPhoneEmail.module.css';
+}
