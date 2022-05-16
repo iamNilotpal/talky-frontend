@@ -15,7 +15,8 @@ const authSlice = createSlice({
   reducers: {
     setAuth: (state, action) => {
       state.user = action.payload;
-      state.isAuthed = true;
+      if (action.payload) state.isAuthed = true;
+      else state.isAuthed = false;
     },
     setOtpData: (state, action) => {
       state.otpData = action.payload;
