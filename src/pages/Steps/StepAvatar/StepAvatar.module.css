@@ -14,7 +14,7 @@
 .warning {
   font-size: 13px;
   font-weight: 500;
-  color: #c4c5c5;
+  color: var(--text-color-2);
   margin-bottom: 20px;
 }
 

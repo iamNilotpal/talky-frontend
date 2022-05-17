@@ -11,7 +11,7 @@
 .tapButton {
   width: 45px;
   height: 45px;
-  background: #262626;
+  background: var(--bg-dark-2);
   border: none;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@
 }
 
 .active {
-  background: #0077ff;
+  background-color: var(--accent-color);
 }
 
 .paragraph {
@@ -35,6 +35,6 @@
   text-align: center;
   font-size: 12px;
   line-height: 170%;
-  color: #c4c5c5;
+  color: var(--text-color-2);
   margin-top: -8px;
 }

@@ -2,22 +2,27 @@
   color: inherit;
   cursor: pointer;
   border: none;
+  outline: none;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  background-color: #0077ff;
+  background-color: var(--accent-color);
   padding: 9px 30px;
   border-radius: 50px;
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #button:hover {
-  background-color: rgba(0, 119, 255, 0.7);
+  background-color: rgba(101, 77, 237, 0.7);
 }
 
 #button:hover img {
   transform: translateX(3px);
+}
+
+#button:focus {
+  box-shadow: var(--box-shadow);
 }
 
 #button img {

@@ -4,12 +4,12 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  border: 5px solid #0077ff;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
   overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 .avatarWrapper img {
@@ -22,7 +22,7 @@
 .chooseAvatar {
   max-width: 180px;
   margin: 0 auto;
-  margin-top: -6px;
+  margin-top: -10px;
 }
 
 .chooseAvatar input {
@@ -31,7 +31,7 @@
 
 .chooseAvatar label {
   display: inline-block;
-  font-size: 13px;
-  color: #0077ff;
+  font-size: 12px;
   cursor: pointer;
+  margin-top: 13px;
 }

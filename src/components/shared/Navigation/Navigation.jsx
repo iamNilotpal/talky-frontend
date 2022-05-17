@@ -37,12 +37,19 @@ const Navigation = () => {
         <img
           src="/images/logo192.svg"
           alt="Site logo"
-          style={{ height: '25px', marginRight: '8px' }}
+          style={{ height: '30px', marginRight: '8px' }}
         />
         <span>Talky</span>
       </Link>
-      {authed && user.activated && (
-        <Button onClick={handleLogout} text="Logout" icon="shock" />
+      {authed && (
+        <div className={styles.logoutWrapper}>
+          {user.activated && (
+            <figure className={styles.avatar}>
+              <img src={user.avatar} alt="User avatar" />
+            </figure>
+          )}
+          <Button onClick={handleLogout} text="Logout" />
+        </div>
       )}
     </nav>
   );

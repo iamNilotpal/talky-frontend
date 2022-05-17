@@ -15,12 +15,12 @@
 .inviteWrapper {
   font-size: 13px;
   font-weight: 500;
-  color: #c4c5c5;
+  color: var(--text-color-2);
   text-align: center;
 }
 
 .inviteWrapper a {
-  color: #0077ff;
+  color: var(--accent-color);
   font-size: 15px;
   font-weight: 600;
   margin-left: 5px;
@@ -33,5 +33,5 @@
   text-align: center;
   font-size: 14px;
   line-height: 170%;
-  color: #c4c5c5;
+  color: var(--text-color-2);
 }

@@ -76,7 +76,7 @@ const StepAvatar = () => {
     <section className={`${styles.cardWrapper}  margin_top--big`}>
       <Card heading={`Hey, ${name}`} icon={'fire'}>
         <div>
-          <p className={styles.paragraph} style={{ marginBottom: '8px' }}>
+          <p className={styles.paragraph} style={{ marginBottom: '12px' }}>
             How's your avatar?
           </p>
           <Avatar image={avatar} onChange={handleAvatarChange} />

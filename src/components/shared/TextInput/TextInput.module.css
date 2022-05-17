@@ -1,20 +1,28 @@
 .input {
-  color: inherit;
-  font-size: 15px;
-  background: #262626;
-  border: none;
-  border-radius: 10px;
   width: 288px;
   height: 45px;
+  color: inherit;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
   padding-left: 15px;
   padding-right: 10px;
   text-align: center;
+  background: linear-gradient(
+    180deg,
+    rgba(99, 106, 150, 0.4) 0%,
+    rgba(182, 186, 214, 0.25) 100%
+  );
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(40px);
 }
 
 .input::placeholder {
   font-size: 15px;
+  color: rgb(177, 172, 172);
 }
 
 .input:focus {
-  outline: 2px solid #0077ff;
+  box-shadow: var(--box-shadow);
 }

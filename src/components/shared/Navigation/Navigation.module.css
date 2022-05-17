@@ -2,7 +2,7 @@
   padding: 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .logo {
@@ -16,4 +16,33 @@
 .logo span {
   font-weight: 700;
   font-size: 22px;
+}
+
+.logoutWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.logoutWrapper img {
+  width: 15px;
+  height: 15px;
+}
+
+.logoutWrapper .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.avatar img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
 }
