@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { activateUser } from '../../../api/otp-service';
 import LoaderSpinner from '../../../components/Loader/Spinner/Spinner';
@@ -19,10 +19,15 @@ const MAX_ALLOWD_SIZE = 3 * 1024 * 1024; // 3 MB
 const fileTypes = ['image/png', 'image/gif', 'image/jpeg'];
 
 const StepAvatar = () => {
+  const [unMounted, setUnMounted] = useState(false);
   const name = useSelector(selectName);
   const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
+
+  useEffect(() => {
+    return () => setUnMounted(true);
+  }, []);
 
   const handleAvatarChange = (e) => {
     const image = e.target.files[0];
@@ -44,7 +49,7 @@ const StepAvatar = () => {
     activateUser({ name, avatar: avatar })
       .then(({ data }) => {
         dispatch(setLoading(true));
-        if (data && data.ok && data.user.activated)
+        if (!unMounted && data && data.ok && data.user.activated)
           dispatch(setAuth(data.user));
       })
       .catch((e) => {
