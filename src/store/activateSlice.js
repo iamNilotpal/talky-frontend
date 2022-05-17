@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   name: '',
   avatar: '/images/cool.svg',
+  loading: false,
 };
 
 const activateSlice = createSlice({
@@ -15,11 +16,15 @@ const activateSlice = createSlice({
     setAvatar: (state, action) => {
       state.avatar = action.payload;
     },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
   },
 });
 
 export const selectName = (state) => state.activate.name;
 export const selectAvatar = (state) => state.activate.avatar;
+export const selectLoading = (state) => state.activate.loading;
 
-export const { setName, setAvatar } = activateSlice.actions;
+export const { setName, setAvatar, setLoading } = activateSlice.actions;
 export default activateSlice.reducer;

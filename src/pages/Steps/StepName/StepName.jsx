@@ -13,7 +13,7 @@ const StepName = ({ onNextClick }) => {
   const dispatch = useDispatch();
 
   const onNext = () => {
-    if (!fullName) return errorToast('Type you name.');
+    if (!fullName) return errorToast('Type your name.');
     dispatch(setName(fullName));
     onNextClick();
   };

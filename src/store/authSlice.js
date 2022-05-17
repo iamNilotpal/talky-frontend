@@ -7,6 +7,7 @@ const initialState = {
     phone: '',
     hash: '',
   },
+  loading: false,
 };
 
 const authSlice = createSlice({
@@ -21,12 +22,16 @@ const authSlice = createSlice({
     setOtpData: (state, action) => {
       state.otpData = action.payload;
     },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
   },
 });
 
 export const selectUser = (state) => state.auth.user;
 export const selectOtpData = (state) => state.auth.otpData;
 export const selectAuth = (state) => state.auth.isAuthed;
+export const selectLoading = (state) => state.auth.loading;
 
-export const { setAuth, setOtpData } = authSlice.actions;
+export const { setAuth, setOtpData, setLoading } = authSlice.actions;
 export default authSlice.reducer;

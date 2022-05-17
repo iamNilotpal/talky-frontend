@@ -6,22 +6,34 @@ import styles from './StepOtp.module.css';
 import { sendOtp, verifyOtp } from '../../../api/otp-service';
 import { errorToast, successToast } from '../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectOtpData, setAuth, setOtpData } from '../../../store/authSlice';
+import {
+  selectLoading,
+  selectOtpData,
+  setAuth,
+  setLoading,
+  setOtpData,
+} from '../../../store/authSlice';
 
 const StepOtp = () => {
   const [otp, setOtp] = useState('');
   const { hash, phone } = useSelector(selectOtpData);
+  const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
   useEffect(() => successToast('OTP sent to your phone number.'), []);
 
   const handleOtpVerification = () => {
     if (!otp) return errorToast('Enter 4-digit code sent your phone');
+    dispatch(setLoading(true));
     verifyOtp(phone, otp, hash)
       .then(({ data }) => {
+        dispatch(setLoading(false));
         if (data.authed && data.ok) dispatch(setAuth(data.user));
       })
-      .catch(({ response }) => errorToast(response.data.message));
+      .catch(({ response }) => {
+        dispatch(setLoading(false));
+        errorToast(response.data.message);
+      });
   };
 
   const handleOtpSend = async () => {
@@ -29,10 +41,10 @@ const StepOtp = () => {
     sendOtp(phone)
       .then(({ data }) => {
         successToast('OTP sent to your phone.');
-        console.log(data);
+        console.log('Just for testing purpose', data.otp);
         dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
       })
-      .catch(({ response }) => errorToast(response.data.message));
+      .catch((e) => errorToast(e.message || e.response.data.message));
   };
 
   return (
@@ -47,7 +59,11 @@ const StepOtp = () => {
           }
         />
         <div className={styles.otpWrapper}>
-          <Button text="Verify OTP" onClick={handleOtpVerification} />
+          <Button
+            text="Verify OTP"
+            onClick={handleOtpVerification}
+            disabled={loading}
+          />
           <span onClick={handleOtpSend} id={styles.resend}>
             Didn't receive? Resend Otp
           </span>

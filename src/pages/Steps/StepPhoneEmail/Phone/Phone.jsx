@@ -5,19 +5,33 @@ import Button from '../../../../components/shared/Button/Button';
 import TextInput from '../../../../components/shared/TextInput/TextInput';
 import { sendOtp } from '../../../../api/otp-service';
 import { errorToast } from '../../../../utils';
-import { useDispatch } from 'react-redux';
-import { setOtpData } from '../../../../store/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectLoading,
+  setOtpData,
+  setLoading,
+} from '../../../../store/authSlice';
 
 const Phone = ({ onNextClick }) => {
   const [phone, setPhone] = useState('');
   const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
 
   const handleOtpSend = async () => {
-    if (!phone) return errorToast('Enter your phone number');
-    const { data } = await sendOtp(phone);
-    console.log(data);
-    dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
-    onNextClick();
+    try {
+      if (!phone) return errorToast('Enter your phone number');
+      dispatch(setLoading(true));
+      const { data } = await sendOtp(phone);
+      dispatch(setLoading(false));
+      if (data) {
+        console.log('just for testing purpose', data.otp);
+        dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
+        onNextClick();
+      }
+    } catch (error) {
+      dispatch(setLoading(false));
+      errorToast(error.message || error.response.data.message);
+    }
   };
 
   return (
@@ -32,7 +46,7 @@ const Phone = ({ onNextClick }) => {
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
-      <Button text="Request OTP" onClick={handleOtpSend} />
+      <Button text="Request OTP" onClick={handleOtpSend} disabled={loading} />
       <p className={styles.paragraph}>
         By entering your phone number, you’re agreeing to our Terms of Service
         and Privacy Policy. Thanks!

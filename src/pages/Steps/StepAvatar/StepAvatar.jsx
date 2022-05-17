@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { activateUser } from '../../../api/otp-service';
 import LoaderSpinner from '../../../components/Loader/Spinner/Spinner';
@@ -7,8 +7,10 @@ import Button from '../../../components/shared/Button/Button';
 import Card from '../../../components/shared/Card/Card';
 import {
   selectAvatar,
+  selectLoading,
   selectName,
   setAvatar,
+  setLoading,
 } from '../../../store/activateSlice';
 import { setAuth } from '../../../store/authSlice';
 import { errorToast } from '../../../utils';
@@ -20,7 +22,7 @@ const StepAvatar = () => {
   const name = useSelector(selectName);
   const avatar = useSelector(selectAvatar);
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
+  const loading = useSelector(selectLoading);
 
   const handleAvatarChange = (e) => {
     const image = e.target.files[0];
@@ -38,33 +40,35 @@ const StepAvatar = () => {
   };
 
   const handleActivateUser = () => {
-    setLoading(true);
+    dispatch(setLoading(true));
     activateUser({ name, avatar: avatar })
       .then(({ data }) => {
-        setLoading(false);
+        dispatch(setLoading(true));
         if (data && data.ok && data.user.activated)
           dispatch(setAuth(data.user));
       })
-      .catch(({ response }) => {
-        setLoading(false);
-        errorToast(response.data.message);
+      .catch((e) => {
+        dispatch(setLoading(false));
+        errorToast(e?.response.data.message || e.message);
       });
   };
 
   if (loading)
     return (
-      <section className={`${styles.cardWrapper} margin_top--big`}>
-        <Card heading="Activation in progress..." icon="cool">
-          <span className={styles.warning}>
-            Don't refresh the page, or activation will fail.
-          </span>
-          <LoaderSpinner />
-        </Card>
+      <section className={`${styles.cardWrapper}  ${styles.activationWrapper}`}>
+        <h1 className={styles.activationHeading}>
+          <img src="/images/cool.svg" alt="Cool emoji icon" />
+          <span>Activation is in progress...</span>
+        </h1>
+        <span className={styles.warning}>
+          Don't refresh the page, or activation will fail.
+        </span>
+        <LoaderSpinner />
       </section>
     );
 
   return (
-    <section className={`${styles.cardWrapper} margin_top--big`}>
+    <section className={`${styles.cardWrapper}  margin_top--big`}>
       <Card heading={`Hey, ${name}`} icon={'fire'}>
         <div>
           <p className={styles.paragraph} style={{ marginBottom: '8px' }}>
@@ -72,7 +76,11 @@ const StepAvatar = () => {
           </p>
           <Avatar image={avatar} onChange={handleAvatarChange} />
         </div>
-        <Button onClick={handleActivateUser} text="Next" />
+        <Button
+          onClick={handleActivateUser}
+          text="Let's Go"
+          disabled={loading}
+        />
       </Card>
     </section>
   );

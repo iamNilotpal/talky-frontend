@@ -1,5 +1,5 @@
 .loader {
-  min-height: 90vh;
+  min-height: 95vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 .loader span {
-  font-size: 45px;
+  font-size: 55px;
   font-weight: 600;
   animation: blur 3s linear infinite;
   line-height: 20px;
