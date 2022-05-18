@@ -1,10 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/authSlice';
 import styles from './Rooms.module.css';
 
 const Rooms = () => {
-  const user = useSelector(selectUser);
   return (
     <main className="container">
       <div className={styles.roomHeader}>
