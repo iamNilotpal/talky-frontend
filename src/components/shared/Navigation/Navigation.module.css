@@ -38,7 +38,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-2);
 }
 
 .avatar img {

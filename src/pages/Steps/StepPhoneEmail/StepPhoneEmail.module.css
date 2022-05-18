@@ -22,7 +22,7 @@
 }
 
 .tapButton:focus {
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-2);
 }
 
 .tapButton img {
