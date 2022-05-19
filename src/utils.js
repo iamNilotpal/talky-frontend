@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 
-export const errorToast = (message) =>
+export const toastifyErrorMessage = (message) =>
   toast.error(message, {
     duration: 1500,
     position: 'bottom-center',
@@ -10,7 +10,7 @@ export const errorToast = (message) =>
     },
   });
 
-export const successToast = (message) =>
+export const toastifySuccessMessage = (message) =>
   toast.success(message, {
     duration: 1500,
     position: 'bottom-center',

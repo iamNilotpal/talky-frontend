@@ -5,7 +5,7 @@ import TextInput from '../../../components/shared/TextInput/TextInput';
 import Button from '../../../components/shared/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectName, setName } from '../../../store/activateSlice';
-import { errorToast } from '../../../utils';
+import { toastifyErrorMessage } from '../../../utils';
 
 const StepName = ({ onNextClick }) => {
   const name = useSelector(selectName);
@@ -13,7 +13,7 @@ const StepName = ({ onNextClick }) => {
   const dispatch = useDispatch();
 
   const onNext = () => {
-    if (!fullName) return errorToast('Type your name.');
+    if (!fullName) return toastifyErrorMessage('Type your name.');
     dispatch(setName(fullName));
     onNextClick();
   };

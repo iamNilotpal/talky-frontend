@@ -4,7 +4,7 @@ import styles from '../StepPhoneEmail.module.css';
 import Button from '../../../../components/shared/Button/Button';
 import TextInput from '../../../../components/shared/TextInput/TextInput';
 import { sendOtp } from '../../../../api/otp-service';
-import { errorToast } from '../../../../utils';
+import { toastifyErrorMessage } from '../../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectLoading,
@@ -19,7 +19,7 @@ const Phone = ({ onNextClick }) => {
 
   const handleOtpSend = async () => {
     try {
-      if (!phone) return errorToast('Enter your phone number');
+      if (!phone) return toastifyErrorMessage('Enter your phone number');
       dispatch(setLoading(true));
       const { data } = await sendOtp(phone);
       dispatch(setLoading(false));
@@ -30,7 +30,7 @@ const Phone = ({ onNextClick }) => {
       }
     } catch (error) {
       dispatch(setLoading(false));
-      errorToast(error.message || error.response.data.message);
+      toastifyErrorMessage(error.message || error.response.data.message);
     }
   };
 

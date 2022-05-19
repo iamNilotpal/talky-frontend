@@ -13,7 +13,7 @@ import {
   setLoading,
 } from '../../../store/activateSlice';
 import { setAuth } from '../../../store/authSlice';
-import { errorToast } from '../../../utils';
+import { toastifyErrorMessage } from '../../../utils';
 import styles from './StepAvatar.module.css';
 const MAX_ALLOWD_SIZE = 3 * 1024 * 1024; // 3 MB
 const fileTypes = ['image/png', 'image/gif', 'image/jpeg'];
@@ -34,10 +34,10 @@ const StepAvatar = () => {
     if (!image) return;
 
     if (!fileTypes.includes(image.type))
-      return errorToast('Only PNG and JPEG files are allowed.');
+      return toastifyErrorMessage('Only PNG and JPEG files are allowed.');
 
     if (image.size > MAX_ALLOWD_SIZE)
-      return errorToast('File size bigger than 3 MB.');
+      return toastifyErrorMessage('File size bigger than 3 MB.');
 
     const reader = new FileReader();
     reader.readAsDataURL(image);
@@ -54,7 +54,7 @@ const StepAvatar = () => {
       })
       .catch((e) => {
         dispatch(setLoading(false));
-        errorToast(e?.response.data.message || e.message);
+        toastifyErrorMessage(e?.response.data.message || e.message);
       });
   };
 

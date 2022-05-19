@@ -4,7 +4,7 @@ import Card from '../../../components/shared/Card/Card';
 import TextInput from '../../../components/shared/TextInput/TextInput';
 import styles from './StepOtp.module.css';
 import { sendOtp, verifyOtp } from '../../../api/otp-service';
-import { errorToast, successToast } from '../../../utils';
+import { toastifyErrorMessage, toastifySuccessMessage } from '../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectLoading,
@@ -20,10 +20,10 @@ const StepOtp = () => {
   const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
-  useEffect(() => successToast('OTP sent to your phone number.'), []);
+  useEffect(() => toastifySuccessMessage('OTP sent to your phone number.'), []);
 
   const handleOtpVerification = () => {
-    if (!otp) return errorToast('Enter 4-digit code sent your phone');
+    if (!otp) return toastifyErrorMessage('Enter 4-digit code sent your phone');
     dispatch(setLoading(true));
     verifyOtp(phone, otp, hash)
       .then(({ data }) => {
@@ -32,19 +32,19 @@ const StepOtp = () => {
       })
       .catch(({ response }) => {
         dispatch(setLoading(false));
-        errorToast(response.data.message);
+        toastifyErrorMessage(response.data.message);
       });
   };
 
   const handleOtpSend = async () => {
-    if (!phone) return errorToast('Enter your mobile number.');
+    if (!phone) return toastifyErrorMessage('Enter your mobile number.');
     sendOtp(phone)
       .then(({ data }) => {
-        successToast('OTP sent to your phone.');
+        toastifySuccessMessage('OTP sent to your phone.');
         console.log('Just for testing purpose', data.otp);
         dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
       })
-      .catch((e) => errorToast(e.message || e.response.data.message));
+      .catch((e) => toastifyErrorMessage(e.message || e.response.data.message));
   };
 
   return (
