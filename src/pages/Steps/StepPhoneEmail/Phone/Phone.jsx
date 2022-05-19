@@ -24,7 +24,7 @@ const Phone = ({ onNextClick }) => {
       const { data } = await sendOtp(phone);
       dispatch(setLoading(false));
       if (data) {
-        console.log('just for testing purpose', data.otp);
+        console.log('Your OTP', data.otp);
         dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
         onNextClick();
       }
