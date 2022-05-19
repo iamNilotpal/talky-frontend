@@ -34,4 +34,6 @@
   font-size: 12px;
   cursor: pointer;
   margin-top: 13px;
+  text-decoration: underline;
+  color: var(--text-color-2);
 }

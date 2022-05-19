@@ -21,11 +21,7 @@ const Button = ({
       }}
     >
       <span>{text}</span>
-      <img
-        src={`/images/${icon}.svg`}
-        alt={iconAlt}
-        width={icon === 'shock' ? '22px' : 'auto'}
-      />
+      <img src={`/images/${icon}.svg`} alt={iconAlt} />
     </button>
   );
 };

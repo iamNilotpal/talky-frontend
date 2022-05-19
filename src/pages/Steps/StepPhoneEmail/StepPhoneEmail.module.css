@@ -12,13 +12,10 @@
   width: 45px;
   height: 45px;
   background: var(--bg-dark-2);
-  border: none;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  cursor: pointer;
 }
 
 .tapButton:focus {
@@ -31,7 +28,7 @@
 }
 
 .active {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-1);
 }
 
 .paragraph {

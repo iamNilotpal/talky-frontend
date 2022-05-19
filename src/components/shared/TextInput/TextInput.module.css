@@ -1,11 +1,9 @@
 .input {
   width: 288px;
-  height: 45px;
+  height: 42px;
   color: inherit;
-  font-size: 15px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
+  font-size: 14px;
+  border-radius: 30px;
   padding-left: 15px;
   padding-right: 10px;
   text-align: center;
@@ -16,13 +14,14 @@
   );
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(40px);
+  transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .input::placeholder {
-  font-size: 15px;
+  font-size: 14px;
   color: rgb(177, 172, 172);
 }
 
 .input:focus {
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-1);
 }

@@ -9,8 +9,8 @@ import {
   setAuth,
   setOtpData,
 } from '../../../store/authSlice';
-import { errorToast } from '../../../utils';
-import Button from '../Button/Button';
+import { toastifyErrorMessage } from '../../../utils';
+import LogoutButton from '../LogoutButton/LogoutButton';
 import styles from './Navigation.module.css';
 
 const Navigation = () => {
@@ -21,18 +21,18 @@ const Navigation = () => {
   const handleLogout = async () => {
     try {
       const { data } = await logout();
-      errorToast('Logged out :)');
+      toastifyErrorMessage('Logged out :)');
       dispatch(setAuth(data.user));
       dispatch(setOtpData({ phone: '', hash: '' }));
       dispatch(setName(''));
     } catch ({ response }) {
-      errorToast(response.data.message);
+      toastifyErrorMessage(response.data.message);
       dispatch(setAuth(response.data.user));
     }
   };
 
   return (
-    <nav className={`conatiner ${styles.navbar}`}>
+    <nav className={`container ${styles.navbar}`}>
       <Link to="/" className={styles.logo}>
         <img
           src="/images/logo192.svg"
@@ -44,11 +44,13 @@ const Navigation = () => {
       {authed && (
         <div className={styles.logoutWrapper}>
           {user.activated && (
-            <figure className={styles.avatar}>
-              <img src={user.avatar} alt="User avatar" />
-            </figure>
+            <>
+              <figure className={styles.avatar}>
+                <img src={user.avatar} alt="User avatar" />
+              </figure>
+              <LogoutButton onClick={handleLogout} />
+            </>
           )}
-          <Button onClick={handleLogout} text="Logout" />
         </div>
       )}
     </nav>

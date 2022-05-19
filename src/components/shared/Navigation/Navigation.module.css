@@ -2,7 +2,7 @@
   padding: 40px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
 .logo {
@@ -19,9 +19,10 @@
 }
 
 .logoutWrapper {
+  align-self: baseline;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 17px;
   font-weight: 600;
 }
 
@@ -31,8 +32,8 @@
 }
 
 .logoutWrapper .avatar {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

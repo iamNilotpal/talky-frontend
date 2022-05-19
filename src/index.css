@@ -7,13 +7,15 @@
 :root {
   --bg-dark-1: #1a1a1a;
   --bg-dark-2: #212121;
-  --accent-color: rgba(101, 77, 237, 0.9);
+  --accent-color-1: rgba(101, 77, 237, 0.9);
+  --accent-color-2: rgba(101, 77, 237, 0.7);
   --text-color-1: #fff;
   --text-color-2: #c4c5c5;
   --box-shadow-1: rgb(47 184 255 / 10%) 0px 10px 40px,
     rgb(47 184 255) 0px 0px 0px 1px inset;
   --box-shadow-2: rgb(47 184 255 / 20%) 0px 10px 40px,
     rgb(47 184 255) 0px 0px 0px 2px inset;
+  --border: 0.5px solid rgba(255, 255, 255, 0.3);
 }
 
 html,
@@ -153,6 +155,22 @@ select {
   font: inherit;
 }
 
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--accent-color-1);
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover {
+  background-color: var(--accent-color-2);
+}
+
 ol,
 ul {
   list-style: none;
@@ -176,8 +194,8 @@ table {
   border-spacing: 0;
 }
 
-.conatiner {
-  max-width: 1200px;
+.container {
+  max-width: 1300px;
   margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
