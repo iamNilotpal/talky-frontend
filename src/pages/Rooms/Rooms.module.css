@@ -1,17 +1,93 @@
 .roomHeader {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 .headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
 .heading {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--accent-color-1);
 }
 
 .searchBoxWrapper {
+  position: relative;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-dark-2);
+  border-radius: 20px;
+  border: var(--border);
+}
+
+.searchBoxWrapper img {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  width: 17px;
+  height: 17px;
 }
 
 .searchBox {
+  width: 280px;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  padding: 8px 20px 8px 40px;
+  background-color: transparent;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
-.headerRight {
+.searchBox:focus {
+  box-shadow: var(--box-shadow-1);
+}
+
+.createRoomButton {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  padding: 7px 20px;
+}
+
+.createRoomButton:focus,
+.createRoomButton:active {
+  box-shadow: var(--box-shadow-2);
+}
+
+.createRoomButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.roomsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  gap: 30px;
+  padding-bottom: 40px;
 }
