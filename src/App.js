@@ -16,6 +16,7 @@ import Activate from './pages/Activate/Activate';
 import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
 import Rooms from './pages/Rooms/Rooms';
+import Room from './pages/Room/Room';
 
 const App = () => {
   const loading = useRefreshToken();
@@ -37,6 +38,9 @@ const App = () => {
         </SemiProtectedRoute>
         <ProtectedRoute path="/rooms">
           <Rooms />
+        </ProtectedRoute>
+        <ProtectedRoute path="/room/:roomId">
+          <Room />
         </ProtectedRoute>
         <Route path="*">
           <Redirect to="/" />
