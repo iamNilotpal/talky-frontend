@@ -1,12 +1,12 @@
 .roomCard {
-  background: var(--bg-dark-2);
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 12px 14px 5px;
-  box-shadow: rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset,
-    rgb(23 0 102 / 20%) 0px 20px 40px, rgb(0 0 0 / 10%) 0px 1px 3px;
+  gap: 25px;
+  background: var(--bg-dark-2);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 13px 15px 8px;
+  box-shadow: rgb(255 255 255 / 20%) 0px 0px 0px 0.5px inset;
   cursor: pointer;
 }
 
@@ -25,22 +25,46 @@
 .roomSpeakerAvatar {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow-2);
+  overflow: hidden;
+  padding: 5px;
 }
 
 .roomSpeakersName {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .totalPeople {
+  font-size: 13px;
+  font-weight: 500;
   display: flex;
-  gap: 3px;
   align-items: center;
   justify-content: center;
+  gap: 2px;
   align-self: flex-end;
-  font-size: 12px;
+  margin-right: -5px;
 }
 
 .totalPeople img {
   width: 18px;
   margin-bottom: 4px;
+}
+
+.multipleSpeakersAvatars {
+  position: relative;
+}
+
+.multipleSpeakersAvatars img {
+  position: absolute;
+  background-color: var(--bg-dark-2);
+}
+
+.multipleSpeakersAvatars img:first-child {
+  top: 5px;
+  left: 15px;
+}
+
+.multipleSpeakersNames {
+  margin-top: 18px;
 }

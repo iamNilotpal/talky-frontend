@@ -3,48 +3,18 @@ import styles from './Rooms.module.css';
 import RoomCard from '../../components/RoomCard/RoomCard';
 import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
 import CreateRoomButton from '../../components/shared/CreateRoomButton/CreateRoomButton';
-
-const rooms = [
-  {
-    id: 1,
-    topic: 'Some beasutiful topic that nobody cares',
-    speakers: [
-      { id: 1, name: 'Nilotpal Deka', avatar: '/images/monkey-avatar.svg' },
-      { id: 2, name: 'Mojahidul Islam', avatar: '/images/monkey-avatar.svg' },
-    ],
-    totalPeople: 45,
-  },
-  {
-    id: 2,
-    topic: 'Some beasutiful topic that nobody cares',
-    speakers: [
-      { id: 3, name: 'Nilotpal Deka', avatar: '/images/monkey-avatar.svg' },
-      { id: 4, name: 'Mojahidul Islam', avatar: '/images/monkey-avatar.svg' },
-    ],
-    totalPeople: 45,
-  },
-  {
-    id: 3,
-    topic: 'Some beasutiful topic that nobody cares',
-    speakers: [
-      { id: 5, name: 'Nilotpal Deka', avatar: '/images/monkey-avatar.svg' },
-      { id: 6, name: 'Mojahidul Islam', avatar: '/images/monkey-avatar.svg' },
-    ],
-    totalPeople: 45,
-  },
-  {
-    id: 4,
-    topic: 'Some beasutiful topic that nobody cares',
-    speakers: [
-      { id: 7, name: 'Nilotpal Deka', avatar: '/images/monkey-avatar.svg' },
-      { id: 8, name: 'Mojahidul Islam', avatar: '/images/monkey-avatar.svg' },
-    ],
-    totalPeople: 45,
-  },
-];
+import { useRooms } from '../../hooks/useRooms';
 
 const Rooms = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  const { rooms, error } = useRooms();
+
+  const filteredRooms = search
+    ? rooms.filter((r) =>
+        r.topic.toLowerCase().startsWith(search.toLowerCase())
+      )
+    : rooms;
 
   return (
     <main className="container">
@@ -56,7 +26,9 @@ const Rooms = () => {
             <input
               type="text"
               className={styles.searchBox}
-              placeholder="Search a room"
+              placeholder="Search a room..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
@@ -64,12 +36,11 @@ const Rooms = () => {
       </div>
 
       <section className={styles.roomsWrapper}>
-        {rooms.map((room, index) => (
-          <>
-            <RoomCard room={room} key={index} />
-            <RoomCard room={room} key={index * room.id} />
-          </>
-        ))}
+        {filteredRooms.length > 0 &&
+          !error &&
+          filteredRooms.map((room, index) => (
+            <RoomCard room={room} key={room.id} />
+          ))}
       </section>
       {isOpen && <AddRoomModal onModalClose={() => setIsOpen(false)} />}
     </main>
