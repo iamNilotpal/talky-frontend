@@ -9,7 +9,7 @@ import {
   setAuth,
   setOtpData,
 } from '../../../store/authSlice';
-import { toastifyErrorMessage } from '../../../utils';
+import { toastifyErrorMessage, toastifySuccessMessage } from '../../../utils';
 import LogoutButton from '../LogoutButton/LogoutButton';
 import styles from './Navigation.module.css';
 
@@ -21,7 +21,7 @@ const Navigation = () => {
   const handleLogout = async () => {
     try {
       const { data } = await logout();
-      toastifyErrorMessage('Logged out :)');
+      toastifySuccessMessage('Logged out :)');
       dispatch(setAuth(data.user));
       dispatch(setOtpData({ phone: '', hash: '' }));
       dispatch(setName(''));

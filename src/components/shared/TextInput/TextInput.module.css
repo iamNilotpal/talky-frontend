@@ -3,15 +3,11 @@
   height: 42px;
   color: inherit;
   font-size: 14px;
-  border-radius: 30px;
+  border-radius: 10px;
   padding-left: 15px;
   padding-right: 10px;
   text-align: center;
-  background: linear-gradient(
-    180deg,
-    rgba(99, 106, 150, 0.4) 0%,
-    rgba(182, 186, 214, 0.25) 100%
-  );
+  background-color: transparent;
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(40px);
   transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);

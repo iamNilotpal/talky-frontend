@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Rooms.module.css';
 import RoomCard from '../../components/RoomCard/RoomCard';
+import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
+import CreateRoomButton from '../../components/shared/CreateRoomButton/CreateRoomButton';
 
 const rooms = [
   {
@@ -42,6 +44,8 @@ const rooms = [
 ];
 
 const Rooms = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <main className="container">
       <div className={styles.roomHeader}>
@@ -56,10 +60,7 @@ const Rooms = () => {
             />
           </div>
         </div>
-        <button type="button" className={styles.createRoomButton}>
-          <img src="/images/setting.svg" alt="Settings icon" />
-          <span>Create a room</span>
-        </button>
+        <CreateRoomButton type="button" onClick={() => setIsOpen(true)} />
       </div>
 
       <section className={styles.roomsWrapper}>
@@ -70,6 +71,7 @@ const Rooms = () => {
           </>
         ))}
       </section>
+      {isOpen && <AddRoomModal onModalClose={() => setIsOpen(false)} />}
     </main>
   );
 };
