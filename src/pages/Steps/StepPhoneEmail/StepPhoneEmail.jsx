@@ -3,10 +3,10 @@ import Email from './Email/Email';
 import Phone from './Phone/Phone';
 import styles from './StepPhoneEmail.module.css';
 
-const phoneEmailAuth = {
+const phoneEmailAuth = Object.freeze({
   phone: Phone,
   email: Email,
-};
+});
 
 const StepPhoneEmail = ({ onNextClick }) => {
   const [type, setType] = useState('phone');
