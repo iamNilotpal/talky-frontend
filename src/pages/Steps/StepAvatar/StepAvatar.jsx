@@ -48,7 +48,7 @@ const StepAvatar = () => {
     dispatch(setLoading(true));
     activateUser({ name, avatar: avatar })
       .then(({ data }) => {
-        dispatch(setLoading(true));
+        dispatch(setLoading(false));
         if (!unMounted && data && data.ok && data.user.activated)
           dispatch(setAuth(data.user));
       })

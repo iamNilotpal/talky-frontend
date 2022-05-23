@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import StepName from '../Steps/StepName/StepName';
 import StepAvatar from '../Steps/StepAvatar/StepAvatar';
-import Activating from '../Steps/StepActivating/Activating';
 
 const steps = Object.freeze({
   1: StepName,
   2: StepAvatar,
-  3: Activating,
 });
 
 const Activate = () => {
