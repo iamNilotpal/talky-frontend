@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { selectAuth, selectUser } from '../../store/authSlice';
 
-const SemiProtectedRoute = ({ children, ...rest }) => {
+const ProtectedRoute = ({ children, ...rest }) => {
   const isAuthed = useSelector(selectAuth);
   const user = useSelector(selectUser);
 
@@ -26,4 +26,4 @@ const SemiProtectedRoute = ({ children, ...rest }) => {
   );
 };
 
-export default SemiProtectedRoute;
+export default ProtectedRoute;
