@@ -43,7 +43,7 @@
 
 .searchBoxWrapper img {
   position: absolute;
-  top: 12px;
+  top: 10.5px;
   left: 14px;
   width: 17px;
   height: 17px;
@@ -61,7 +61,7 @@
 }
 
 .searchBox:focus {
-  box-shadow: var(--box-shadow-1);
+  box-shadow: var(--box-shadow-2);
 }
 
 .roomsWrapper {

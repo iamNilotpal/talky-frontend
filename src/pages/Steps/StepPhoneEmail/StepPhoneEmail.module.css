@@ -18,17 +18,13 @@
   border-radius: 8px;
 }
 
-.tapButton:focus {
-  box-shadow: var(--box-shadow-2);
-}
-
 .tapButton img {
   width: 30px;
   height: 30px;
 }
 
 .active {
-  background-color: rgb(252, 186, 40);
+  box-shadow: var(--box-shadow-2);
 }
 
 .paragraph {
