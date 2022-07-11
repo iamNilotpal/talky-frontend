@@ -1,5 +1,6 @@
 #button {
   color: inherit;
+  background-color: var(--gray);
   font-size: 13px;
   font-weight: 600;
   display: flex;
@@ -20,6 +21,6 @@
 }
 
 #button img {
-  margin-bottom: 2px;
+  margin-bottom: 2.8px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

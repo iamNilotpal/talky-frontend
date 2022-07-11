@@ -13,10 +13,6 @@
   transform: translateX(3px);
 }
 
-#button:focus {
-  box-shadow: var(--box-shadow-2);
-}
-
 #button img {
   margin-left: 5px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);

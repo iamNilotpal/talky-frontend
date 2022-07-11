@@ -28,7 +28,7 @@
 }
 
 .active {
-  background-color: var(--accent-color-1);
+  background-color: rgb(252, 186, 40);
 }
 
 .paragraph {

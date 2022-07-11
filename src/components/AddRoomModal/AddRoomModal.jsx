@@ -34,8 +34,8 @@ const AddRoomModal = ({ onModalClose }) => {
     >
       <div className={styles.modalBody}>
         <img
-          src="/images/x.svg"
-          alt="Close iocn"
+          src='/images/x.svg'
+          alt='Close iocn'
           id={styles.closeButton}
           onClick={onModalClose}
         />
@@ -70,9 +70,9 @@ const AddRoomModal = ({ onModalClose }) => {
         <div className={styles.modalCreateWrapper}>
           <h3>Start your room and get started</h3>
           <CreateRoomButton
-            text="Create Your Room"
-            icon="fire"
-            alt="Fire icon"
+            text='Create Your Room'
+            icon='fire'
+            alt='Fire icon'
             onClick={handleCreateRoom}
           />
         </div>

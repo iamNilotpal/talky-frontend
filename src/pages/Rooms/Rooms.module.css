@@ -28,7 +28,7 @@
   width: 60%;
   height: 3px;
   border-radius: 10px;
-  background-color: var(--accent-color-1);
+  background-color: var(--yellow);
 }
 
 .searchBoxWrapper {

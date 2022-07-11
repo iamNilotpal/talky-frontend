@@ -5,17 +5,23 @@
 }
 
 :root {
-  --bg-dark-1: #1a1a1a;
-  --bg-dark-2: #212121;
-  --accent-color-1: rgba(101, 77, 237, 0.9);
-  --accent-color-2: rgba(101, 77, 237, 0.7);
-  --text-color-1: #fff;
-  --text-color-2: #c4c5c5;
-  --box-shadow-1: rgb(47 184 255 / 10%) 0px 10px 40px,
-    rgb(47 184 255) 0px 0px 0px 1px inset;
-  --box-shadow-2: rgb(47 184 255 / 20%) 0px 10px 40px,
-    rgb(47 184 255) 0px 0px 0px 2px inset;
+  --bg-dark-1: #0f0d0e;
+  --bg-dark-2: #231f20;
+  --text-color-1: #f9f4da;
+  --text-color-2: #fff;
+  --text-color-3: #767980;
+  --purple: #a42ce9;
+  --blue: #2d7fea;
+  --yellow: #f4f73e;
+  --pink: #eb30c1;
+  --gold: #ffd500;
+  --aqua: #2febd2;
+  --gray: #282c35;
   --border: 0.5px solid rgba(255, 255, 255, 0.3);
+  --box-shadow-1: rgb(47 184 255 / 20%) 0px 10px 40px,
+    rgb(252, 186, 40) 0px 0px 0px 1px inset;
+  --box-shadow-2: rgb(47 184 255 / 20%) 0px 10px 40px,
+    rgb(252, 186, 40) 0px 0px 0px 2px inset;
 }
 
 html,
@@ -164,12 +170,16 @@ input {
 
 button {
   cursor: pointer;
-  background-color: var(--accent-color-1);
+  background-color: var(--gray);
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 button:hover {
-  background-color: var(--accent-color-2);
+  background-color: #22262e;
+}
+
+button:focus {
+  box-shadow: var(--box-shadow-2);
 }
 
 ol,
@@ -204,4 +214,13 @@ table {
 
 .margin_top--big {
   margin-top: 110px;
+}
+
+.border {
+  display: flex;
+}
+
+.border-item {
+  width: 100%;
+  height: 5px;
 }

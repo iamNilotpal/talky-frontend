@@ -1,4 +1,5 @@
 .createRoomButton {
+  background-color: var(--gray);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -7,11 +8,6 @@
   font-weight: 500;
   color: inherit;
   padding: 7px 20px;
-}
-
-.createRoomButton:focus,
-.createRoomButton:active {
-  box-shadow: var(--box-shadow-2);
 }
 
 .createRoomButton img {
