@@ -19,10 +19,10 @@
   --gray: #282c35;
   --border: 0.5px solid rgba(255, 255, 255, 0.3);
   --brand-yellow: #fcba28;
-  --box-shadow-1: rgb(252 186 40 / 7%) 0px 10px 40px,
-    rgb(252, 186, 40) 0px 0px 0px 1px inset;
-  --box-shadow-2: rgb(252 186 40 / 7%) 0px 10px 40px,
-    rgb(252, 186, 40) 0px 0px 0px 2px inset;
+  --box-shadow-1: rgb(47 235 210 / 7%) 0px 10px 40px,
+    rgb(47, 235, 210) 0px 0px 0px 1px inset;
+  --box-shadow-2: rgb(47 235 210 / 7%) 0px 10px 40px,
+    rgb(47, 235, 210) 0px 0px 0px 2px inset;
 }
 
 ::selection {
@@ -145,7 +145,7 @@ body {
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: grayscale;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: var(--text-color-1);
   background-color: var(--bg-dark-1);
