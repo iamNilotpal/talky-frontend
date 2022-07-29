@@ -5,7 +5,7 @@
 }
 
 :root {
-  --bg-dark-1: #101010;
+  --bg-dark-1: #141517;
   --bg-dark-2: #231f20;
   --text-color-1: #f9f4da;
   --text-color-2: #fff;
@@ -15,10 +15,10 @@
   --gold: #ffd500;
   --yellow: #f4f73e;
   --pink: #eb30c1;
-  --aqua: #2febd2;
+  --aqua: #2eebd1;
   --gray: #282c35;
   --border: 0.5px solid rgba(255, 255, 255, 0.3);
-  --brand-yellow: #fcba28;
+  --brand-yellow: #fcb929;
   --box-shadow-1: rgb(47 235 210 / 7%) 0px 10px 40px,
     rgb(47, 235, 210) 0px 0px 0px 1px inset;
   --box-shadow-2: rgb(47 235 210 / 7%) 0px 10px 40px,
