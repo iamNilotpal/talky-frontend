@@ -13,9 +13,7 @@ const Rooms = () => {
   const { rooms, error } = useRooms();
 
   const filteredRooms = search
-    ? rooms.filter((r) =>
-        r.topic.toLowerCase().startsWith(search.toLowerCase()),
-      )
+    ? rooms.filter((r) => r.topic.toLowerCase().includes(search.toLowerCase()))
     : rooms;
 
   return (
