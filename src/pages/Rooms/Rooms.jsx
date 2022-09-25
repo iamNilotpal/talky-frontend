@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import styles from './Rooms.module.css';
-import RoomCard from '../../components/RoomCard/RoomCard';
-import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
-import CreateRoomButton from '../../components/shared/CreateRoomButton/CreateRoomButton';
+
 import { useRooms } from '../../hooks/useRooms';
+import styles from './Rooms.module.css';
+
+import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
+import RoomCard from '../../components/RoomCard/RoomCard';
+import CreateRoomButton from '../../components/shared/CreateRoomButton/CreateRoomButton';
 
 const Rooms = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +14,7 @@ const Rooms = () => {
 
   const filteredRooms = search
     ? rooms.filter((r) =>
-        r.topic.toLowerCase().startsWith(search.toLowerCase())
+        r.topic.toLowerCase().startsWith(search.toLowerCase()),
       )
     : rooms;
 

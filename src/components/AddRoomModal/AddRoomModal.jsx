@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import styles from './AddRoomModal.module.css';
-import TextInput from '../shared/TextInput/TextInput';
-import CreateRoomButton from '../shared/CreateRoomButton/CreateRoomButton';
+import { useHistory } from 'react-router-dom';
+
+import { createRoom } from '../../api/room-service';
 import { roomTypes } from '../../constants';
 import { toastifyErrorMessage } from '../../utils';
-import { createRoom } from '../../api/room-service';
-import { useHistory } from 'react-router-dom';
+import styles from './AddRoomModal.module.css';
+
+import CreateRoomButton from '../shared/CreateRoomButton/CreateRoomButton';
+import TextInput from '../shared/TextInput/TextInput';
 
 const AddRoomModal = ({ onModalClose }) => {
   const [topic, setTopic] = useState('');
@@ -34,8 +36,8 @@ const AddRoomModal = ({ onModalClose }) => {
     >
       <div className={styles.modalBody}>
         <img
-          src='/images/x.svg'
-          alt='Close iocn'
+          src="/images/x.svg"
+          alt="close icon"
           id={styles.closeButton}
           onClick={onModalClose}
         />
@@ -61,7 +63,7 @@ const AddRoomModal = ({ onModalClose }) => {
                 }`}
                 onClick={() => setSelectedRoom(roomType.value)}
               >
-                <img src={roomType.icon} alt={`${roomType.name} icon`} />
+                <img src={roomType.icon} alt="room logo" />
                 <span>{roomType.name}</span>
               </li>
             ))}
@@ -70,9 +72,9 @@ const AddRoomModal = ({ onModalClose }) => {
         <div className={styles.modalCreateWrapper}>
           <h3>Start your room and get started</h3>
           <CreateRoomButton
-            text='Create Your Room'
-            icon='fire'
-            alt='Fire icon'
+            text="Create Your Room"
+            icon="fire"
+            alt="fire icon"
             onClick={handleCreateRoom}
           />
         </div>

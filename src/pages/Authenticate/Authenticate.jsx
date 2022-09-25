@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import StepPhoneEmail from '../Steps/StepPhoneEmail/StepPhoneEmail';
+
 import StepOtp from '../Steps/StepOtp/StepOtp';
+import StepPhoneEmail from '../Steps/StepPhoneEmail/StepPhoneEmail';
 
 const steps = Object.freeze({
   1: StepPhoneEmail,

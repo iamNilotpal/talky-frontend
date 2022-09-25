@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import StepName from '../Steps/StepName/StepName';
+
 import StepAvatar from '../Steps/StepAvatar/StepAvatar';
+import StepName from '../Steps/StepName/StepName';
 
 const steps = Object.freeze({
   1: StepName,

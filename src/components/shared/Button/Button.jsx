@@ -6,7 +6,6 @@ const Button = ({
   onClick,
   type = 'button',
   icon = 'arrow',
-  iconAlt = 'Arrow icon',
   disabled,
 }) => {
   return (
@@ -21,7 +20,7 @@ const Button = ({
       }}
     >
       <span>{text}</span>
-      <img src={`/images/${icon}.svg`} alt={iconAlt} />
+      <img src={`/images/${icon}.svg`} alt="" />
     </button>
   );
 };

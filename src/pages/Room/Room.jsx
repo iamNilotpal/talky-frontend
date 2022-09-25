@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import { useWebRTC } from '../../hooks/useWebRTC';
 import { selectUser } from '../../store/authSlice';
 
@@ -10,7 +11,7 @@ const Room = () => {
   const { clients, updateAudioRef } = useWebRTC(roomId, user);
 
   return (
-    <div className='container'>
+    <div className="container">
       {clients.map((client) => (
         <p key={client.id}>
           <span>{client.name}</span>

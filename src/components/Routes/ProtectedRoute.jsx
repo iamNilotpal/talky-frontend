@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
+
 import { selectAuth, selectUser } from '../../store/authSlice';
 
 const ProtectedRoute = ({ children, ...rest }) => {

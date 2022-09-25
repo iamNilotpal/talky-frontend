@@ -5,7 +5,7 @@ const LogoutButton = ({ onClick }) => {
   return (
     <button type="button" id={styles.button} onClick={onClick}>
       <span>Logout</span>
-      <img src={'/images/signout.svg'} alt="Sign out icon" />
+      <img src={'/images/logout.svg'} alt="logout icon" />
     </button>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { getRandomBorder, getRandomTopBorder } from '../../utils';
 import styles from './RoomCard.module.css';
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
+
 import { toastifyErrorMessage } from '../utils';
 import { useStateWithCallback } from './useStateWithCallback';
 
@@ -17,7 +18,7 @@ export const useWebRTC = (roomId, user) => {
       if (!doesExist)
         setClients((prevClients) => [...prevClients, newClient], cb);
     },
-    [clients, setClients]
+    [clients, setClients],
   );
 
   useEffect(() => {

@@ -6,13 +6,15 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { useRefreshToken } from './hooks/useRefreshToken';
+
 import Loader from './components/Loader/Screen/Screen';
 import GuestRoute from './components/Routes/GuestRoute';
 import ProtectedRoute from './components/Routes/ProtectedRoute';
 import SemiProtectedRoute from './components/Routes/SemiProtectedRoute';
 import Border from './components/shared/Border/Border';
 import Navigation from './components/shared/Navigation/Navigation';
-import { useRefreshToken } from './hooks/useRefreshToken';
+
 import Activate from './pages/Activate/Activate';
 import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
@@ -29,23 +31,23 @@ const App = () => {
       <Border />
       <Navigation />
       <Switch>
-        <GuestRoute path='/' exact>
+        <GuestRoute path="/" exact>
           <Home />
         </GuestRoute>
-        <GuestRoute path='/authenticate'>
+        <GuestRoute path="/authenticate">
           <Authenticate />
         </GuestRoute>
-        <SemiProtectedRoute path='/activate'>
+        <SemiProtectedRoute path="/activate">
           <Activate />
         </SemiProtectedRoute>
-        <ProtectedRoute path='/rooms'>
+        <ProtectedRoute path="/rooms">
           <Rooms />
         </ProtectedRoute>
-        <ProtectedRoute path='/room/:roomId'>
+        <ProtectedRoute path="/room/:roomId">
           <Room />
         </ProtectedRoute>
-        <Route path='*'>
-          <Redirect to='/' />
+        <Route path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
       <Toaster />

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { activateUser } from '../../../api/otp-service';
+
 import LoaderSpinner from '../../../components/Loader/Spinner/Spinner';
 import Avatar from '../../../components/shared/Avatar/Avatar';
 import Button from '../../../components/shared/Button/Button';
 import Card from '../../../components/shared/Card/Card';
+
+import { activateUser } from '../../../api/otp-service';
 import {
   selectAvatar,
   selectLoading,
@@ -18,13 +20,13 @@ import styles from './StepAvatar.module.css';
 
 // CONSTANTS
 const MAX_ALLOWED_SIZE = 3 * 1024 * 1024; // 3 MB
-const fileTypes = ['image/png', 'image/gif', 'image/jpeg'];
+const FILE_TYPES = ['image/png', 'image/gif', 'image/jpeg'];
 
 const StepAvatar = () => {
   const [unMounted, setUnMounted] = useState(false);
+  const dispatch = useDispatch();
   const name = useSelector(selectName);
   const avatar = useSelector(selectAvatar);
-  const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const StepAvatar = () => {
     const image = e.target.files[0];
     if (!image) return;
 
-    if (!fileTypes.includes(image.type))
+    if (!FILE_TYPES.includes(image.type))
       return toastifyErrorMessage('Only PNG and JPEG files are allowed.');
 
     if (image.size > MAX_ALLOWED_SIZE)
@@ -48,15 +50,16 @@ const StepAvatar = () => {
 
   const handleActivateUser = () => {
     dispatch(setLoading(true));
-    activateUser({ name, avatar: avatar })
+
+    activateUser({ name, avatar })
       .then(({ data }) => {
         dispatch(setLoading(false));
-        if (!unMounted && data && data.ok && data.user.activated)
+        if (!unMounted && data?.ok && data.user.activated)
           dispatch(setAuth(data.user));
       })
       .catch((e) => {
         dispatch(setLoading(false));
-        toastifyErrorMessage(e?.response.data.message || e.message);
+        toastifyErrorMessage(e?.response?.data.message || e.message);
       });
   };
 

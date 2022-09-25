@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { logout } from '../../../api/otp-service';
 import { setName } from '../../../store/activateSlice';
 import {
@@ -10,6 +11,7 @@ import {
   setOtpData,
 } from '../../../store/authSlice';
 import { toastifyErrorMessage, toastifySuccessMessage } from '../../../utils';
+
 import LogoutButton from '../LogoutButton/LogoutButton';
 import styles from './Navigation.module.css';
 
