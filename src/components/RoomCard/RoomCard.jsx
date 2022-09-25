@@ -29,7 +29,7 @@ const RoomCard = ({ room }) => {
             <img
               src={sp.avatar}
               key={sp.id}
-              alt='Speaker avatar'
+              alt="Speaker avatar"
               className={styles.roomSpeakerAvatar}
               style={avatarBorder}
             />
@@ -49,7 +49,7 @@ const RoomCard = ({ room }) => {
       </div>
       <p className={styles.totalPeople}>
         <span>{room.totalPeople}</span>
-        <img src='/images/verified.svg' alt='User icon' />
+        <img src="/images/verified.svg" alt="User icon" />
       </p>
     </article>
   );

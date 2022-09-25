@@ -15,7 +15,9 @@ import {
 import { setAuth } from '../../../store/authSlice';
 import { toastifyErrorMessage } from '../../../utils';
 import styles from './StepAvatar.module.css';
-const MAX_ALLOWD_SIZE = 3 * 1024 * 1024; // 3 MB
+
+// CONSTANTS
+const MAX_ALLOWED_SIZE = 3 * 1024 * 1024; // 3 MB
 const fileTypes = ['image/png', 'image/gif', 'image/jpeg'];
 
 const StepAvatar = () => {
@@ -36,7 +38,7 @@ const StepAvatar = () => {
     if (!fileTypes.includes(image.type))
       return toastifyErrorMessage('Only PNG and JPEG files are allowed.');
 
-    if (image.size > MAX_ALLOWD_SIZE)
+    if (image.size > MAX_ALLOWED_SIZE)
       return toastifyErrorMessage('File size bigger than 3 MB.');
 
     const reader = new FileReader();

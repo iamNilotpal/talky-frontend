@@ -16,5 +16,6 @@ export const useRefreshToken = () => {
         .finally(() => setLoading(false));
     })();
   }, [dispatch]);
+
   return loading;
 };

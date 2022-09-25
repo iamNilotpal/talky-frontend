@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Home.module.css';
-import Card from '../../components/shared/Card/Card';
+import { Link, Redirect } from 'react-router-dom';
 import Button from '../../components/shared/Button/Button';
-import { Redirect } from 'react-router-dom';
+import Card from '../../components/shared/Card/Card';
+import styles from './Home.module.css';
 
 const Home = () => {
   const [toRegister, setToRegister] = useState(false);

@@ -1,12 +1,5 @@
 import axios from 'axios';
-
 import { api } from './index';
-
-export const sendOtp = (phone) => api.post('/send-otp', { phone });
-export const verifyOtp = (phone, otp, hash) =>
-  api.post('/verify-otp', { phone, otp, hash });
-export const activateUser = (data) => api.post('/activate', data);
-export const logout = () => api.post('/logout');
 
 /* Refreshing Tokens in Background */
 api.interceptors.response.use(
@@ -32,3 +25,11 @@ api.interceptors.response.use(
     throw error;
   }
 );
+
+const sendOtp = (phone) => api.post('/send-otp', { phone });
+const verifyOtp = (phone, otp, hash) =>
+  api.post('/verify-otp', { phone, otp, hash });
+const activateUser = (data) => api.post('/activate', data);
+const logout = () => api.post('/logout');
+
+export { sendOtp, verifyOtp, activateUser, logout };
