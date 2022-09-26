@@ -47,9 +47,11 @@ const Navigation = () => {
         <div className={styles.logoutWrapper}>
           {user.activated && (
             <>
-              <figure className={styles.avatar}>
-                <img src={user.avatar} alt="User avatar" />
-              </figure>
+              <Link to="/me">
+                <figure className={styles.avatar}>
+                  <img src={user.avatar} alt="User avatar" />
+                </figure>
+              </Link>
               <LogoutButton onClick={handleLogout} />
             </>
           )}

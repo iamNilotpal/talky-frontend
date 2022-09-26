@@ -20,6 +20,7 @@ import Authenticate from './pages/Authenticate/Authenticate';
 import Home from './pages/Home/Home';
 import Room from './pages/Room/Room';
 import Rooms from './pages/Rooms/Rooms';
+import Profile from './pages/Profile';
 
 const App = () => {
   const loading = useRefreshToken();
@@ -45,6 +46,9 @@ const App = () => {
         </ProtectedRoute>
         <ProtectedRoute path="/room/:roomId">
           <Room />
+        </ProtectedRoute>
+        <ProtectedRoute path="/me">
+          <Profile />
         </ProtectedRoute>
         <Route path="*">
           <Redirect to="/" />
