@@ -20,7 +20,7 @@ import styles from './StepAvatar.module.css';
 
 // CONSTANTS
 const MAX_ALLOWED_SIZE = 3 * 1024 * 1024; // 3 MB
-const FILE_TYPES = ['image/png', 'image/gif', 'image/jpeg'];
+const FILE_TYPES = ['image/png', 'image/gif', 'image/jpeg', 'image/jpg'];
 
 const StepAvatar = () => {
   const [unMounted, setUnMounted] = useState(false);
@@ -50,7 +50,6 @@ const StepAvatar = () => {
 
   const handleActivateUser = () => {
     dispatch(setLoading(true));
-
     activateUser({ name, avatar })
       .then(({ data }) => {
         dispatch(setLoading(false));

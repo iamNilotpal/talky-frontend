@@ -42,6 +42,12 @@ const Rooms = () => {
             <RoomCard room={room} key={room.id} />
           ))}
       </section>
+      {search && filteredRooms.length == 0 && (
+        <section className={styles.emptyList}>
+          <h1 className={styles.emptyListText}>Oops! Try Something Else.</h1>
+          <p style={{ fontSize: '20px' }}>Zero Matches.</p>
+        </section>
+      )}
       {isOpen && <AddRoomModal onModalClose={() => setIsOpen(false)} />}
     </main>
   );
