@@ -1,0 +1,41 @@
+.container {
+  width: 500px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+}
+
+.border {
+  border-bottom: var(--border);
+  margin-top: 20px;
+}
+
+.backButton {
+  transform: rotate(180deg);
+  padding: 10px;
+  background-color: var(--gray);
+  border-radius: 100px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.information {
+  margin-top: 40px;
+}
+
+.basicInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saveButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}

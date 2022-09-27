@@ -19,5 +19,5 @@
 }
 
 .input:focus {
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-1);
 }

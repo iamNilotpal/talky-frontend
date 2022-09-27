@@ -7,7 +7,7 @@ export const toastifyErrorMessage = (message) =>
     position: 'bottom-center',
     style: {
       fontSize: '15px',
-      fontWeight: 500,
+      fontWeight: 600,
     },
   });
 
@@ -17,7 +17,7 @@ export const toastifySuccessMessage = (message) =>
     position: 'bottom-center',
     style: {
       fontSize: '15px',
-      fontWeight: 500,
+      fontWeight: 600,
     },
   });
 

@@ -42,10 +42,27 @@ const Rooms = () => {
             <RoomCard room={room} key={room.id} />
           ))}
       </section>
-      {search && filteredRooms.length == 0 && (
+      {search && filteredRooms.length === 0 && (
         <section className={styles.emptyList}>
           <h1 className={styles.emptyListText}>Oops! Try Something Else.</h1>
-          <p style={{ fontSize: '20px' }}>Zero Matches.</p>
+          <p style={{ fontSize: '20px', color: 'var(--gold)' }}>
+            Zero Matches.
+          </p>
+        </section>
+      )}
+      {!search && rooms.length === 0 && (
+        <section className={styles.emptyList}>
+          <h1 className={styles.emptyListText}>
+            Looks like there is no room to join{' '}
+            <span style={{ color: 'var(--gold)' }}>);</span>
+          </h1>
+          <p style={{ fontSize: '13px' }}>
+            Create your first room. Tap on the{' '}
+            <span style={{ color: 'var(--gold)', fontWeight: '600' }}>
+              Create Room
+            </span>{' '}
+            button to get started.
+          </p>
         </section>
       )}
       {isOpen && <AddRoomModal onModalClose={() => setIsOpen(false)} />}
