@@ -23,12 +23,11 @@ api.interceptors.response.use(
       }
     }
     throw error;
-  }
+  },
 );
 
-const sendOtp = (phone) => api.post('/send-otp', { phone });
-const verifyOtp = (phone, otp, hash) =>
-  api.post('/verify-otp', { phone, otp, hash });
+const sendOtp = (data) => api.post('/send-otp', data);
+const verifyOtp = (data) => api.post('/verify-otp', data);
 const activateUser = (data) => api.post('/activate', data);
 const logout = () => api.post('/logout');
 

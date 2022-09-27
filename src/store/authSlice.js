@@ -4,6 +4,7 @@ const initialState = {
   isAuthed: false,
   user: null,
   otpData: {
+    email: '',
     phone: '',
     hash: '',
   },

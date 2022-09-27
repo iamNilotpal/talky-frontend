@@ -16,7 +16,7 @@ import {
 
 const StepOtp = () => {
   const [otp, setOtp] = useState('');
-  const { hash, phone } = useSelector(selectOtpData);
+  const { hash, phone, email } = useSelector(selectOtpData);
   const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
 
@@ -25,7 +25,8 @@ const StepOtp = () => {
   const handleOtpVerification = () => {
     if (!otp) return toastifyErrorMessage('Enter 4-digit code sent your phone');
     dispatch(setLoading(true));
-    verifyOtp(phone, otp, hash)
+
+    verifyOtp({ phone, email, otp, hash })
       .then(({ data }) => {
         dispatch(setLoading(false));
         if (data.authed && data.ok) dispatch(setAuth(data.user));
