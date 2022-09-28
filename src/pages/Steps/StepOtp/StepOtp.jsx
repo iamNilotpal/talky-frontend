@@ -39,7 +39,7 @@ const StepOtp = () => {
 
   const handleOtpSend = async () => {
     if (!phone) return toastifyErrorMessage('Enter your mobile number.');
-    sendOtp(phone)
+    sendOtp({ phone })
       .then(({ data }) => {
         toastifySuccessMessage('OTP sent to your phone.');
         console.log('Your OTP', data.otp);

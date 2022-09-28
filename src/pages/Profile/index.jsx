@@ -25,18 +25,16 @@ const Profile = () => {
 
   return (
     <div className={styles.container}>
-      <div>
-        <div className={styles.heading}>
-          <img
-            src="/images/arrow.svg"
-            alt="arrow left"
-            className={styles.backButton}
-            onClick={() => history.goBack()}
-          />
-          <h1>Account Settings</h1>
-        </div>
-        <div className={styles.border} />
+      <div className={styles.heading}>
+        <img
+          src="/images/arrow.svg"
+          alt="arrow left"
+          className={styles.backButton}
+          onClick={() => history.goBack()}
+        />
+        <h1>Account Settings</h1>
       </div>
+      <div className={styles.border} />
 
       <section className={styles.information}>
         <h1 style={{ marginBlock: '25px' }}>Personal Information</h1>
