@@ -1,6 +1,6 @@
 .container {
   width: 500px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -8,6 +8,10 @@
 .heading {
   display: flex;
   align-items: center;
+}
+
+.information {
+  margin-top: 20px;
 }
 
 .border {
@@ -24,18 +28,17 @@
   cursor: pointer;
 }
 
-.information {
-  margin-top: 40px;
-}
-
-.basicInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.saveButton {
-  display: flex;
-  justify-content: flex-end;
+.dangerZone {
   margin-top: 30px;
+}
+
+.dangerZone h1 {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.dangerZone p {
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 7px;
 }

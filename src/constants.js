@@ -22,3 +22,6 @@ export const RGB_COLORS = [
   '46 235 209',
   '252 185 41',
 ];
+
+export const MAX_ALLOWED_SIZE = 3 * 1024 * 1024; // 3 MB
+export const FILE_TYPES = ['image/png', 'image/gif', 'image/jpeg', 'image/jpg'];

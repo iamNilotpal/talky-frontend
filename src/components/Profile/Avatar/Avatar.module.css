@@ -1,0 +1,56 @@
+.container {
+  margin-bottom: 50px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+}
+
+.avatarWrapper {
+  width: 105px;
+  height: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-2);
+}
+
+.avatarWrapper img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatarWrapper input {
+  display: none;
+}
+
+.editAvatar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 11px;
+  font-weight: 600;
+  left: 180px;
+  top: 122px;
+  background-color: var(--gray);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-2);
+}
+
+.editAvatar img {
+  margin-right: 5px;
+  color: var(--text-color-1);
+  fill: var(--text-color-1);
+}

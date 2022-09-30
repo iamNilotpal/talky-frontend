@@ -7,6 +7,7 @@ const Button = ({
   type = 'button',
   icon = 'arrow',
   disabled,
+  style = {},
 }) => {
   return (
     <button
@@ -17,6 +18,7 @@ const Button = ({
       style={{
         opacity: disabled ? 0.5 : 1,
         cursor: disabled ? 'progress' : 'pointer',
+        ...style,
       }}
     >
       <span>{text}</span>

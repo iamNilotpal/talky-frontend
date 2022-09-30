@@ -42,7 +42,6 @@ const StepOtp = () => {
     sendOtp({ phone })
       .then(({ data }) => {
         toastifySuccessMessage('OTP sent to your phone.');
-        console.log('Your OTP', data.otp);
         dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
       })
       .catch((e) => toastifyErrorMessage(e.message || e.response.data.message));
