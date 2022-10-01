@@ -1,17 +1,20 @@
 import React, { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { selectUser } from '../../store/authSlice';
 import { getRandomBorder, getRandomTopBorder } from '../../utils';
 import styles from './RoomCard.module.css';
 
 const RoomCard = ({ room }) => {
   const history = useHistory();
+  const user = useSelector(selectUser);
+  const avatarBorder = useMemo(() => getRandomBorder(), []);
+  const cardTopBorder = useMemo(() => getRandomTopBorder(), []);
   const topic =
     room.topic.length > 25
       ? room.topic.substr(0, 22).padEnd(25, '.')
       : room.topic;
-  const cardTopBorder = useMemo(() => getRandomTopBorder(), []);
-  const avatarBorder = useMemo(() => getRandomBorder(), []);
 
   return (
     <article
@@ -43,7 +46,7 @@ const RoomCard = ({ room }) => {
         >
           {room.speakers.map((sp) => (
             <p key={sp.id} className={styles.roomSpeakersName}>
-              {sp.name}
+              {room.owner.id === user.id ? `You (${user.name})` : sp.name}
             </p>
           ))}
         </div>
