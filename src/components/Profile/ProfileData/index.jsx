@@ -51,6 +51,8 @@ const ProfileData = () => {
           name="name"
           value={form.name}
           onChange={onChange}
+          placeholder="Your name"
+          fullWidth={true}
           style={{
             textAlign: 'left',
             marginRight: '15px',
@@ -61,6 +63,8 @@ const ProfileData = () => {
             name="phone"
             value={form.phone}
             onChange={onChange}
+            placeholder="Your phone number"
+            fullWidth={true}
             style={{
               textAlign: 'left',
             }}
@@ -70,6 +74,8 @@ const ProfileData = () => {
           <TextInput
             name="email"
             value={form.email}
+            fullWidth={true}
+            placeholder="Your email"
             onChange={onChange}
             style={{
               textAlign: 'left',
@@ -78,12 +84,7 @@ const ProfileData = () => {
         )}
       </div>
       <div className={styles.saveButton}>
-        <Button
-          icon=""
-          text="Save Changes"
-          onClick={updateInfo}
-          disabled={loading}
-        />
+        <Button text="Save Changes" onClick={updateInfo} disabled={loading} />
       </div>
     </div>
   );
