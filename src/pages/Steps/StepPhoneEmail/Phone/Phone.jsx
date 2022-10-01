@@ -4,7 +4,7 @@ import Card from '../../../../components/shared/Card/Card';
 import styles from '../StepPhoneEmail.module.css';
 import Button from '../../../../components/shared/Button/Button';
 import TextInput from '../../../../components/shared/TextInput/TextInput';
-import { sendOtp } from '../../../../api/otp-service';
+import { sendOtp } from '../../../../services/api/otp-service';
 import { toastifyErrorMessage } from '../../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import {

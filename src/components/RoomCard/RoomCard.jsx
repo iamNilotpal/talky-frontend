@@ -7,8 +7,8 @@ import styles from './RoomCard.module.css';
 const RoomCard = ({ room }) => {
   const history = useHistory();
   const topic =
-    room.topic.length > 35
-      ? room.topic.substr(0, 32).padEnd(35, '.')
+    room.topic.length > 25
+      ? room.topic.substr(0, 22).padEnd(25, '.')
       : room.topic;
   const cardTopBorder = useMemo(() => getRandomTopBorder(), []);
   const avatarBorder = useMemo(() => getRandomBorder(), []);

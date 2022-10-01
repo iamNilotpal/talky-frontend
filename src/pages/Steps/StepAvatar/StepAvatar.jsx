@@ -6,7 +6,7 @@ import Avatar from '../../../components/shared/Avatar/Avatar';
 import Button from '../../../components/shared/Button/Button';
 import Card from '../../../components/shared/Card/Card';
 
-import { activateUser } from '../../../api/otp-service';
+import { activateUser } from '../../../services/api/otp-service';
 import {
   selectAvatar,
   selectLoading,

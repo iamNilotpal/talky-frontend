@@ -1,7 +1,7 @@
 import emailValidator from 'email-validator';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendOtp } from '../../../../api/otp-service';
+import { sendOtp } from '../../../../services/api/otp-service';
 import Button from '../../../../components/shared/Button/Button';
 import Card from '../../../../components/shared/Card/Card';
 import TextInput from '../../../../components/shared/TextInput/TextInput';

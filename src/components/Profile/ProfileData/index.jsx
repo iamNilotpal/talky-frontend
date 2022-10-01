@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updatePersonalInfo } from '../../../api/user-service';
+import { updatePersonalInfo } from '../../../services/api/user-service';
 import { setLoading } from '../../../store/activateSlice';
 import { selectLoading, selectUser, setAuth } from '../../../store/authSlice';
 import { toastifyErrorMessage, toastifySuccessMessage } from '../../../utils';
@@ -38,7 +38,7 @@ const ProfileData = () => {
         }
       })
       .catch((e) =>
-        toastifyErrorMessage(e?.response?.data.message || e.message),
+        toastifyErrorMessage(e?.response?.data.message || e.message)
       )
       .finally(() => dispatch(setLoading(false)));
   };

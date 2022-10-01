@@ -3,7 +3,7 @@ import Button from '../../../components/shared/Button/Button';
 import Card from '../../../components/shared/Card/Card';
 import TextInput from '../../../components/shared/TextInput/TextInput';
 import styles from './StepOtp.module.css';
-import { sendOtp, verifyOtp } from '../../../api/otp-service';
+import { sendOtp, verifyOtp } from '../../../services/api/otp-service';
 import { toastifyErrorMessage, toastifySuccessMessage } from '../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import {

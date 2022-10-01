@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { createRoom } from '../../api/room-service';
+import { createRoom } from '../../services/api/room-service';
 import { roomTypes } from '../../constants';
 import { toastifyErrorMessage } from '../../utils';
 import styles from './AddRoomModal.module.css';

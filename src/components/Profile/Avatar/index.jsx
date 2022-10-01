@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateAvatar } from '../../../api/user-service';
+import { updateAvatar } from '../../../services/api/user-service';
 import {
   selectLoading,
   selectUser,
@@ -38,15 +38,13 @@ const Avatar = () => {
 
       updateAvatar({ avatar: imageToUpload })
         .then(({ data }) => {
-          console.log(data);
           if (data.ok) {
             toastifySuccessMessage('Profile updated.');
             dispatch(setAuth(data.user));
           }
         })
-        .catch(
-          (e) => toastifyErrorMessage(e?.response?.data.message || e.message),
-          dispatch(setLoading(true)),
+        .catch((e) =>
+          toastifyErrorMessage(e?.response?.data.message || e.message)
         )
         .finally(() => dispatch(setLoading(false)));
     };

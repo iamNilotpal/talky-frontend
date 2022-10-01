@@ -1,13 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { deleteAccount } from '../../api/user-service';
+
 import Avatar from '../../components/Profile/Avatar';
 import DeleteAccountModal from '../../components/Profile/DeleteAccountModal';
-
 import ProfileData from '../../components/Profile/ProfileData';
 import Button from '../../components/shared/Button/Button';
+
+import { deleteAccount } from '../../services/api/user-service';
 import { selectLoading, setAuth, setLoading } from '../../store/authSlice';
 import { toastifyErrorMessage, toastifySuccessMessage } from '../../utils';
 import styles from './Profile.module.css';

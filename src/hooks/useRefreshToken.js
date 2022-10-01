@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { api } from '../api';
+import { api } from '../services/api';
 import { setAuth } from '../store/authSlice';
 
 export const useRefreshToken = () => {
