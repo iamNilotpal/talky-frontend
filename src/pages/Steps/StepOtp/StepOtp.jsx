@@ -38,11 +38,16 @@ const StepOtp = () => {
   };
 
   const handleOtpSend = async () => {
-    if (!phone) return toastifyErrorMessage('Enter your mobile number.');
-    sendOtp({ phone })
+    if (!phone && !email)
+      return toastifyErrorMessage('Provide phone number or email.');
+
+    sendOtp({ phone, email })
       .then(({ data }) => {
-        toastifySuccessMessage('OTP sent to your phone.');
-        dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
+        console.log('Your OTP', data.otp);
+        toastifySuccessMessage('OTP has been sent.');
+        dispatch(
+          setOtpData({ phone: data.phone, email: data.email, hash: data.hash })
+        );
       })
       .catch((e) => toastifyErrorMessage(e.message || e.response.data.message));
   };

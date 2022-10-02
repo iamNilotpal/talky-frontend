@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import LoaderSpinner from '../../../components/Loader/Spinner/Spinner';
@@ -6,6 +6,7 @@ import Avatar from '../../../components/shared/Avatar/Avatar';
 import Button from '../../../components/shared/Button/Button';
 import Card from '../../../components/shared/Card/Card';
 
+import { FILE_TYPES, MAX_ALLOWED_SIZE } from '../../../constants';
 import { activateUser } from '../../../services/api/otp-service';
 import {
   selectAvatar,
@@ -17,18 +18,12 @@ import {
 import { setAuth } from '../../../store/authSlice';
 import { toastifyErrorMessage } from '../../../utils';
 import styles from './StepAvatar.module.css';
-import { FILE_TYPES, MAX_ALLOWED_SIZE } from '../../../constants';
 
 const StepAvatar = () => {
-  const [unMounted, setUnMounted] = useState(false);
   const dispatch = useDispatch();
   const name = useSelector(selectName);
   const avatar = useSelector(selectAvatar);
   const loading = useSelector(selectLoading);
-
-  useEffect(() => {
-    return () => setUnMounted(true);
-  }, []);
 
   const handleAvatarChange = (e) => {
     const image = e.target.files[0];
@@ -40,23 +35,26 @@ const StepAvatar = () => {
     if (image.size > MAX_ALLOWED_SIZE)
       return toastifyErrorMessage('File size bigger than 3 MB.');
 
+    dispatch(setLoading(true));
     const reader = new FileReader();
     reader.readAsDataURL(image);
-    reader.onloadend = () => dispatch(setAvatar(reader.result));
+    reader.onloadend = () => {
+      dispatch(setAvatar(reader.result));
+      dispatch(setLoading(false));
+    };
   };
 
   const handleActivateUser = () => {
     dispatch(setLoading(true));
     activateUser({ name, avatar })
-      .then(({ data }) => {
-        dispatch(setLoading(false));
-        if (!unMounted && data?.ok && data.user.activated)
-          dispatch(setAuth(data.user));
-      })
-      .catch((e) => {
-        dispatch(setLoading(false));
-        toastifyErrorMessage(e?.response?.data.message || e.message);
-      });
+      .then(
+        ({ data }) =>
+          data.ok && data.user.activated && dispatch(setAuth(data.user))
+      )
+      .catch((e) =>
+        toastifyErrorMessage(e?.response?.data.message || e.message)
+      )
+      .finally(() => dispatch(setLoading(false)));
   };
 
   if (loading)

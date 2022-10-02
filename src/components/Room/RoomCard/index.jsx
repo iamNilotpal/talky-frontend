@@ -55,7 +55,7 @@ const RoomCard = ({ room }) => {
             ))}
           </div>
         </div>
-        <p className={styles.subInfo}>
+        <div className={styles.subInfo}>
           <span
             style={{
               color:
@@ -72,7 +72,7 @@ const RoomCard = ({ room }) => {
             <span>{room.totalPeople}</span>
             <img src="/images/verified.svg" alt="User icon" />
           </div>
-        </p>
+        </div>
       </article>
       <Tooltip id={room.id} place="top" multiline={true}>
         {room.topic} by {room.owner.id === user.id ? 'You' : room.owner.name}
