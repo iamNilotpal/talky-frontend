@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
-  avatar: '/images/gojo.jpg',
+  avatar: '/images/man.png',
   loading: false,
 };
 

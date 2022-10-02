@@ -17,8 +17,6 @@ const RoomCard = ({ room }) => {
       ? room.topic.substr(0, 22).padEnd(25, '.')
       : room.topic;
 
-  console.log({ user });
-
   return (
     <>
       <article

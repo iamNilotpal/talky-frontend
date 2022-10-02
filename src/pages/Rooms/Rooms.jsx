@@ -38,9 +38,7 @@ const Rooms = () => {
       <section className={styles.roomsWrapper}>
         {filteredRooms.length > 0 &&
           !error &&
-          filteredRooms.map((room, index) => (
-            <RoomCard room={room} key={room.id} />
-          ))}
+          filteredRooms.map((room) => <RoomCard room={room} key={room.id} />)}
       </section>
       {search && filteredRooms.length === 0 && (
         <section className={styles.emptyList}>
