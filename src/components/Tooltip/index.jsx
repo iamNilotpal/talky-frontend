@@ -5,22 +5,23 @@ const Tooltip = ({
   id,
   effect = 'solid',
   place = 'bottom',
+  color = 'var(--bg-dark-2)',
+  textColor = 'var(--text-color-1)',
   children,
   ...rest
 }) => {
   return (
     <ReactTooltip
       id={id}
-      multiline
       textColor="var(--text-color-1)"
       effect={effect}
       place={place}
-      backgroundColor="var(--bg-dark-2)"
-      arrowColor="var(--bg-dark-2)"
+      backgroundColor={color}
+      arrowColor={color}
       scrollHide
       {...rest}
     >
-      <span style={{ fontWeight: 600 }}>{children}</span>
+      <span style={{ fontWeight: 600, color: textColor }}>{children}</span>
     </ReactTooltip>
   );
 };

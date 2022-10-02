@@ -1,0 +1,53 @@
+.container {
+  width: 500px;
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: var(--bg-dark-2);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 3px,
+    rgba(255, 255, 255, 0.5) 0px 0px 0px 1px inset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roomInfo p:first-child {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--brand-yellow);
+}
+
+.roomInfo p:nth-child(2) {
+  font-size: 11px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions img:first-child {
+  position: relative;
+  width: 35px;
+  padding: 7px;
+  background-color: var(--text-color-1);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.actions img:nth-child(2) {
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--text-color-1);
+  padding: 7px;
+  border-radius: 50%;
+  cursor: pointer;
+}

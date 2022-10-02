@@ -1,0 +1,27 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13%;
+}
+
+.loadingContainer h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--brand-yellow);
+}
+
+.errorContainer {
+  margin-top: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.errorContainer h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--brand-yellow);
+  margin-bottom: 10px;
+}

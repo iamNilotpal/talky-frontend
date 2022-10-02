@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useRooms } from '../../hooks/useRooms';
 import styles from './Rooms.module.css';
 
-import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
-import RoomCard from '../../components/RoomCard/RoomCard';
-import CreateRoomButton from '../../components/shared/CreateRoomButton/CreateRoomButton';
+import AddRoomModal from '../../components/Rooms/AddRoomModal';
+import RoomCard from '../../components/Room/RoomCard';
+import CreateRoomButton from '../../components/Rooms/CreateRoomButton';
 
 const Rooms = () => {
   const [isOpen, setIsOpen] = useState(false);

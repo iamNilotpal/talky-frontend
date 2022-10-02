@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { selectUser } from '../../store/authSlice';
-import { getRandomBorder, getRandomTopBorder } from '../../utils';
-import Tooltip from '../Tooltip';
+import { selectUser } from '../../../store/authSlice';
+import { getRandomBorder, getRandomTopBorder } from '../../../utils';
+import Tooltip from '../../Tooltip';
 import styles from './RoomCard.module.css';
 
 const RoomCard = ({ room }) => {
@@ -61,7 +61,7 @@ const RoomCard = ({ room }) => {
         </p>
       </article>
       <Tooltip id={room.id} place="top" multiline>
-        {room.topic} by {room.owner.name}
+        {room.topic} by {room.owner.id === user.id ? 'You' : room.owner.name}
       </Tooltip>
     </>
   );

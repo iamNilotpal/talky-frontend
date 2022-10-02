@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { createRoom } from '../../services/api/room-service';
-import { roomTypes } from '../../constants';
-import { toastifyErrorMessage } from '../../utils';
+import { createRoom } from '../../../services/api/room-service';
+import { roomTypes } from '../../../constants';
+import { toastifyErrorMessage } from '../../../utils';
 import styles from './AddRoomModal.module.css';
 
-import CreateRoomButton from '../shared/CreateRoomButton/CreateRoomButton';
-import TextInput from '../shared/TextInput/TextInput';
+import CreateRoomButton from '../CreateRoomButton';
+import TextInput from '../../shared/TextInput/TextInput';
 
 const AddRoomModal = ({ onModalClose }) => {
   const [topic, setTopic] = useState('');
