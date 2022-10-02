@@ -38,20 +38,27 @@
   font-size: 14px;
 }
 
+.subInfo {
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .totalPeople {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
   align-self: flex-end;
+  gap: 2px;
   margin-right: -5px;
 }
 
 .totalPeople img {
   width: 18px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .multipleSpeakersAvatars {

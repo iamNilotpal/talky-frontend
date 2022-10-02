@@ -55,12 +55,26 @@ const RoomCard = ({ room }) => {
             ))}
           </div>
         </div>
-        <p className={styles.totalPeople}>
-          <span>{room.totalPeople}</span>
-          <img src="/images/verified.svg" alt="User icon" />
+        <p className={styles.subInfo}>
+          <span
+            style={{
+              color:
+                room.roomType === 'open'
+                  ? 'var(--brand-yellow)'
+                  : room.roomType === 'social'
+                  ? 'var(--aqua)'
+                  : 'var(--danger)',
+            }}
+          >
+            {room.roomType.toUpperCase()}
+          </span>
+          <div className={styles.totalPeople}>
+            <span>{room.totalPeople}</span>
+            <img src="/images/verified.svg" alt="User icon" />
+          </div>
         </p>
       </article>
-      <Tooltip id={room.id} place="top" multiline>
+      <Tooltip id={room.id} place="top" multiline={true}>
         {room.topic} by {room.owner.id === user.id ? 'You' : room.owner.name}
       </Tooltip>
     </>
