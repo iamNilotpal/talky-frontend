@@ -20,10 +20,12 @@
   --danger: #d61c4e;
   --border: 0.5px solid rgba(255, 255, 255, 0.3);
   --brand-yellow: #fcb929;
-  --box-shadow-1: rgb(47 235 210 / 7%) 0px 10px 40px,
-    rgb(47, 235, 210) 0px 0px 0px 1px inset;
-  --box-shadow-2: rgb(47 235 210 / 7%) 0px 10px 40px,
-    rgb(47, 235, 210) 0px 0px 0px 2px inset;
+  --box-shadow-1: rgb(252 185 41 / 7%) 0px 10px 40px,
+    rgb(252, 185, 41) 0px 0px 0px 1px inset;
+  --box-shadow-2: rgb(252 185 41 / 7%) 0px 10px 40px,
+    rgb(252, 185, 41) 0px 0px 0px 1.5px inset;
+  --box-shadow-3: rgba(0, 0, 0, 0.1) 0px 1px 3px,
+    rgba(255, 255, 255, 0.5) 0px 0px 0px 1px inset;
 }
 
 ::selection {

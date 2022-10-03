@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(26, 26, 26, 0.8);
+  background-color: rgba(26, 26, 26, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
   background: var(--bg-dark-2);
   padding: 35px 30px 30px;
   border-radius: 10px;
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-3);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -35,7 +35,7 @@
 }
 
 #closeButton:hover {
-  background-color: var(--gray);
+  background-color: var(--purple);
 }
 
 .modalHeadingText {
@@ -69,7 +69,7 @@
 
 .active {
   background-color: #262626;
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-3);
 }
 
 .typeBox:hover {
@@ -97,4 +97,5 @@
 
 .modalCreateWrapper h3 {
   font-size: 14px;
+  color: var(--brand-yellow);
 }

@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .tapButton img {
@@ -24,7 +25,7 @@
 }
 
 .active {
-  box-shadow: var(--box-shadow-2);
+  background-color: var(--danger);
 }
 
 .paragraph {

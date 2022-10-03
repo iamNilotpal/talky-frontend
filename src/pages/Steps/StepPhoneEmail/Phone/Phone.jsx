@@ -31,7 +31,6 @@ const Phone = ({ onNextClick }) => {
 
         dispatch(setLoading(true));
         const { data } = await sendOtp({ phone: phoneNumber });
-        dispatch(setLoading(false));
         if (data) {
           console.log('Your OTP', data.otp);
           dispatch(setOtpData({ phone: data.phone, hash: data.hash }));
@@ -39,8 +38,9 @@ const Phone = ({ onNextClick }) => {
         }
       }
     } catch (error) {
-      dispatch(setLoading(false));
       toastifyErrorMessage(error.message || error.response.data.message);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 

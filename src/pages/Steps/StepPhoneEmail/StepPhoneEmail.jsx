@@ -15,22 +15,24 @@ const StepPhoneEmail = ({ onNextClick }) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.buttonWrap}>
-        <button
+        <div
+          role="button"
           className={`${styles.tapButton} ${
             type === 'phone' ? styles.active : ''
           }`}
           onClick={() => setType('phone')}
         >
           <img src="/images/phone.svg" alt="Phone icon" />
-        </button>
-        <button
+        </div>
+        <div
+          role="button"
           className={`${styles.tapButton} ${
             type === 'email' ? styles.active : ''
           }`}
           onClick={() => setType('email')}
         >
           <img src="/images/email.svg" alt="Email icon" />
-        </button>
+        </div>
       </div>
       <Component onNextClick={onNextClick} />
     </div>

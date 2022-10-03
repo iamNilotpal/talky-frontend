@@ -12,7 +12,7 @@
   justify-content: center;
   gap: 30px;
   backdrop-filter: blur(20px);
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-3);
 }
 
 .headingWrapper {
