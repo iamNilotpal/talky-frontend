@@ -9,12 +9,12 @@
 
 .activationWrapper {
   height: 280px;
+  color: var(--brand-yellow);
 }
 
 .warning {
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-color-2);
   margin-bottom: 20px;
 }
 
