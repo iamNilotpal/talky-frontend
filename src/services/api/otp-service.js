@@ -23,7 +23,7 @@ api.interceptors.response.use(
       }
     }
     throw error;
-  },
+  }
 );
 
 const sendOtp = (data) => api.post('/send-otp', data);
