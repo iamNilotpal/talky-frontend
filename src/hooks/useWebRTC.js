@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import freeIceServers from 'freeice';
 import { useCallback, useEffect, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { initSocket } from '../services/socket';
 import { SOCKET_EVENTS } from '../services/socket/events';
@@ -9,6 +10,7 @@ import { useStateWithCallback } from './useStateWithCallback';
 
 export const useWebRTC = (roomId, user) => {
   const socket = useRef();
+  const history = useHistory();
   const audioElements = useRef({}); // TO STORE THE AUDIO ELEMENTS
   const peerConnections = useRef({}); // TO STORE ALL THE CONNECTED PEERS
   const localMediaStream = useRef(null); // TO STORE CURRENT USER LOCAL MEDIA STREAM
@@ -35,18 +37,24 @@ export const useWebRTC = (roomId, user) => {
     // WASTED MY 18 HOURS
     // HANDLE REMOVE CLIENT
     const handleRemovePeer = async ({ peerId, userId }) => {
-      if (peerConnections.current[peerId]) {
+      if (userId !== user.id && peerId !== socket.current.id) {
         await peerConnections.current[peerId].close();
         delete peerConnections.current[peerId];
         delete audioElements.current[userId];
         setClients((prev) => prev.filter((client) => client.id !== userId));
+      } else {
+        setClients((prev) => prev.filter((client) => client.id !== userId));
+        Object.values(peerConnections.current).forEach(
+          async (connection) => await connection.close()
+        );
+        history.push('/rooms');
       }
     };
 
     socket.current.on(SOCKET_EVENTS.REMOVE_PEER, handleRemovePeer);
     return () => {
-      console.log('DISCONNECTING');
       socket.current.off(SOCKET_EVENTS.REMOVE_PEER, handleRemovePeer);
+      socket.current.disconnect();
     };
   }, []);
 
@@ -179,5 +187,5 @@ export const useWebRTC = (roomId, user) => {
     };
   }, []);
 
-  return { clients, updateAudioRef };
+  return { clients, updateAudioRef, socket: socket.current };
 };

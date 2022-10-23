@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 
+import { SOCKET_EVENTS } from '../../../services/socket/events';
 import Tooltip from '../../Tooltip';
 import styles from './RoomBottomTab.module.css';
-import { SOCKET_EVENTS } from '../../../services/socket/events';
-import { initSocket } from '../../../services/socket';
-import { useEffect } from 'react';
-import { useRef } from 'react';
 
-const BottomBar = ({ room }) => {
+const BottomBar = ({ room, socket }) => {
   const [muted, setMuted] = useState(false);
-  const socket = useRef();
-
-  useEffect(() => {
-    socket.current = initSocket();
-  }, []);
 
   return (
     <div className={styles.container}>
@@ -48,9 +40,7 @@ const BottomBar = ({ room }) => {
           data-for="leave"
           src="/images/leave.svg"
           alt="leave icon"
-          onClick={() =>
-            socket.current.emit(SOCKET_EVENTS.LEAVE, { roomId: room.id })
-          }
+          onClick={() => socket.emit(SOCKET_EVENTS.LEAVE, { roomId: room.id })}
         />
       </div>
       <Tooltip place="top" id="microphone">

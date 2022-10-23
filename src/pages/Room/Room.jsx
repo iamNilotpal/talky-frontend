@@ -14,7 +14,7 @@ const Room = () => {
   const { roomId } = useParams();
   const user = useSelector(selectUser);
   const { room, error, loading } = useRoom(roomId);
-  const { clients, updateAudioRef } = useWebRTC(roomId, user);
+  const { clients, updateAudioRef, socket } = useWebRTC(roomId, user);
 
   return (
     <RoomErrorBoundary loading={loading} error={error}>
@@ -31,7 +31,7 @@ const Room = () => {
             </p>
           ))}
         </div>
-        <RoomBottomBar room={room} />
+        <RoomBottomBar room={room} socket={socket} />
       </main>
     </RoomErrorBoundary>
   );
