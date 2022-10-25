@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import Button from '../../components/shared/Button/Button';
 import Card from '../../components/shared/Card/Card';
@@ -24,10 +24,6 @@ const Home = () => {
             text="Let's Get Started"
             onClick={() => setToRegister(true)}
           />
-          <div className={styles.inviteWrapper}>
-            <span>Have an invite text?</span>
-            <Link to="/authenticate">Sign In</Link>
-          </div>
         </div>
       </Card>
     </section>

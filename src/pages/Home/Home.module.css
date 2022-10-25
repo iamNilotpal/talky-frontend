@@ -12,20 +12,6 @@
   gap: 8px;
 }
 
-.inviteWrapper {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-color-2);
-  text-align: center;
-}
-
-.inviteWrapper a {
-  color: var(--brand-yellow);
-  font-size: 15px;
-  font-weight: 600;
-  margin-left: 5px;
-}
-
 .paragraph {
   max-width: 355px;
   margin-left: auto;

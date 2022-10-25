@@ -75,7 +75,10 @@ const RoomCard = ({ room }) => {
         </div>
       </article>
       <Tooltip id={room.id} place="top" multiline={true}>
-        {room.topic} by {room.owner.id === user.id ? 'You' : room.owner.name}
+        {room.topic} by{' '}
+        <span style={{ color: 'var(--aqua)' }}>
+          {room.owner.id === user.id ? 'You' : room.owner.name}
+        </span>
       </Tooltip>
     </>
   );
